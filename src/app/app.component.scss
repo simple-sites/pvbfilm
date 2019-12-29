@@ -9,6 +9,13 @@
   }
 }
 
+.tools {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  margin-top: -40px;
+}
+
 .jumbotron {
   position: relative;
   background: url("/assets/images/background.jpg");
@@ -28,6 +35,17 @@
   }
 }
 
+nav {
+  fa-icon {
+    display: inline-block;
+    padding: auto 4px;
+    color: #0d6fc6;
+    width: 1.5rem;
+  }
+}
+
+
+
 .btn-primary {
   background-color: #dc3545;
   border-color: #dc3545;
@@ -44,7 +62,7 @@ h1 {
   color: #999;
 }
 
-.philosophy {
+.simple-introduction {
   position: relative;
   h2 {
     text-align: center;
@@ -88,7 +106,7 @@ h1 {
   }
 }
 
-.roadmap-item {
+.production-item {
   h1 {
     text-align: center;
   }
