@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"
-      ><img class="logo" src="{{ logo }}" /> {{ "NAV-NAME" | translate }}</a
+      ><img class="logo" src="{{ logo }}" /> {{ name | translate }}</a
     >
     <button
       class="navbar-toggler"
@@ -86,12 +86,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link btn-lg" href="#intro">{{
-            "NAV-PHILOSOPHY" | translate
+            "NAV-INTRO" | translate
           }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn-lg" href="#news">{{
-            "NAV-TECHNOLOGY" | translate
+            "NAV-NEWS" | translate
           }}</a>
         </li>
         <li class="nav-item">
@@ -130,10 +130,8 @@
         <div class="row">
           <div class="col">
             <p>
-              <b>浙江瑞宏塑胶有限公司</b
-              >总部位于----浙江天台，注册资金1000万元，是一家专业生产PVB树脂粉到PVB玻璃中间膜的有限责任公司。公司成立就设两个生产基地，温州化工区为PVB树脂粉生产基地，天台为PVB中间膜生产基地。公司引进国外EDI公司和思恳德公司先进设备，具有全面的质量监控和自我检测系统。
-              公司现有员工520人，其中专业技术人员占18%。温州树脂粉生产基地具有成熟的PVB树脂生产工艺，年产能力12000吨；<br />
-              天台PVB胶片生产基地拥有3条先进的PVB胶片生产线，生产车间全部为恒温、恒湿、无尘的净化车间，PVB中间膜年产能力10000吨，并具备生产3.3米宽及1.52MM厚的各种规格PVB胶片的能力。(点击查看全文)
+              {{ intro.context }}
+              (<a href="{{ intro.url }}">点击查看全文</a>)
             </p>
           </div>
         </div>
@@ -142,9 +140,7 @@
   </div>
 </div>
 <div class="container">
-  <h1 class="border-left">
-    <a name="intro"></a>{{ "NAV-PHILOSOPHY" | translate }}
-  </h1>
+  <h1 class="border-left"><a name="intro"></a>{{ "NAV-INTRO" | translate }}</h1>
   <div class="row intro">
     <div class="col">
       <p>
@@ -159,17 +155,17 @@
 
 <div class="container">
   <h1 class="border-left">
-    <a name="news"></a>{{ "NAV-TECHNOLOGY" | translate }}
+    <a name="news"></a>{{ "NAV-NEWS" | translate }}
   </h1>
   <div class="row">
     <table class="table table-hover">
       <tbody>
-        <tr
-        *ngFor="let item of news; let i = index"
-        >
+        <tr *ngFor="let item of news; let i = index">
           <th scope="row"></th>
-          <td class="text-left"><a href="{{item.url}}">{{item.title}}</a></td>
-          <td class="text-right">{{item.date}}</td>
+          <td class="text-left">
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          </td>
+          <td class="text-right">{{ item.date }}</td>
         </tr>
       </tbody>
     </table>
@@ -223,251 +219,30 @@
 </div>
 
 <div class="container">
-  <h1 class="border-left">
-    <a name="wallet"></a>{{ "NAV-WALLET" | translate }}
-  </h1>
-  <div class="row wallet">
-    <div class="col-sm">
-      <h2>Windows 64bit</h2>
-      <p class="icon">
-        <fa-icon [icon]="faWindows"></fa-icon>
-      </p>
-      <a href="{{ WindowsURL }}" target="_blank">
-        <fa-icon [icon]="faDownload"></fa-icon>
-      </a>
-    </div>
-    <div class="col-sm">
-      <h2>Linux 64bit</h2>
-      <p class="icon">
-        <fa-icon [icon]="faLinux"></fa-icon>
-      </p>
-      <a href="{{ LinuxURL }}" target="_blank">
-        <fa-icon [icon]="faDownload"></fa-icon>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- <div class="container">
-  <h1 class="border-left"><a name="exchange"></a>{{ 'NAV-EXCHANGE' | translate }}</h1>
-  <div class="row exchange">
-    <div class="col-sm text-center">
-      <p> <a class="btn btn-outline-primary btn-lg" href="https://www.qbtc.ink/">{{ 'EXCHANGE-NAME-1' | translate }}</a>
-      </p>
-      <p><a class="btn btn-primary btn-lg"
-          href="{{'EXCHANGE-NAME-1-URL' | translate }}">{{ 'EXCHANGE-BUY' | translate }}</a></p>
-    </div>
-    <div class="col-sm text-center">
-    </div>
-    <div class="col-sm text-center">
-    </div>
-  </div>
-</div> -->
-
-<div class="container">
-  <h1 class="border-left">
-    <a name="mining"></a>{{ "NAV-MINING" | translate }}
-  </h1>
-  <div class="row mining">
-    <div class="col-sm">
-      <h3>{{ "MINING-T1" | translate }}</h3>
-      <p>
-        {{ "MINING-T1-1" | translate }}<br />
-        {{ "MINING-T1-2" | translate }}<br />
-        {{ "MINING-T1-3" | translate }}<br />
-        {{ "MINING-T1-4" | translate }}
-        <a href="https://pools.vigcoin.org">https://pools.vigcoin.org</a><br />
-        {{ "MINING-T1-5" | translate }}
-      </p>
-      <p class="text-center">
-        <a
-          class="btn btn-outline-primary btn-lg"
-          href="https://github.com/vigcoin/wiki/blob/master/Pool.md"
-          >{{ "MINING-T1-6" | translate }}
-          <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
-        </a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <img src="/assets/images/mining.jpg" />
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h1 class="border-left">
-    <a name="development"></a>{{ "NAV-DEVELOPMENT" | translate }}
-  </h1>
-  <div class="row development">
-    <div class="col-sm">
-      <img src="/assets/images/software_dev.png" />
-    </div>
-    <div class="col-sm">
-      <h3>{{ "DEVELOPMENT-T1" | translate }}</h3>
-      <p>
-        {{ "DEVELOPMENT-T1-1" | translate }}<br />
-        {{ "DEVELOPMENT-T1-2" | translate }}<br />
-        {{ "DEVELOPMENT-T1-3" | translate }}<br />
-        {{ "DEVELOPMENT-T1-4" | translate }}
-        <a href="https://github.com/vigcoin">https://github.com/vigcoin</a
-        ><br />
-        {{ "DEVELOPMENT-T1-5" | translate }}<br />
-        {{ "DEVELOPMENT-T1-6" | translate }}<br />
-        {{ "DEVELOPMENT-T1-7" | translate }}
-        <a href="https://github.com/cryptonote-rust"
-          >https://github.com/cryptonote-rust</a
-        ><br />
-      </p>
-    </div>
-  </div>
-  <h1 class="border-left"><a name="code"></a>{{ "NAV-CODE" | translate }}</h1>
-  <div class="row code">
-    <div class="col-sm">
-      <h3>{{ "CODE-T1" | translate }}</h3>
-      <p class="text-center">
-        <a
-          class="btn btn-outline-primary btn-lg"
-          href="https://github.com/vigcoin"
-          >{{ "CODE-T1-1" | translate }}
-          <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
-        </a>
-      </p>
-      <p class="text-center">
-        <a
-          class="btn btn-outline-primary btn-lg"
-          href="https://github.com/vigcoin/coin"
-          >{{ "CODE-T1-2" | translate }}
-          <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
-        </a>
-      </p>
-      <p class="text-center">
-        <a
-          class="btn btn-outline-primary btn-lg"
-          href="https://github.com/vigcoin/wallet"
-          >{{ "CODE-T1-3" | translate }}
-          <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
-        </a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <h3>{{ "CODE-T2" | translate }}</h3>
-      <p class="text-center">
-        <a
-          class="btn btn-outline-primary btn-lg"
-          href="https://github.com/cryptonote-rust"
-          >{{ "CODE-T2-1" | translate }}
-          <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
-        </a>
-      </p>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h1 class="border-left">
-    <a name="contact"></a>{{ "NAV-CONTACT" | translate }}
-  </h1>
-  <div class="row contact">
-    <div class="col-sm">
-      <p>
-        <a href="https://gitter.im/vigcoin/development" rel="nofollow">
-          <img
-            src="https://camo.githubusercontent.com/2c168d16d807ef9dc2309f8dafac769c0453a929/68747470733a2f2f696d672e736869656c64732e696f2f6769747465722f726f6f6d2f6261646765732f736869656c64732e7376673f6c6f676f3d676974746572"
-            alt="Gitter Chat"
-            data-canonical-src="https://img.shields.io/gitter/room/badges/shields.svg?logo=gitter"
-            style="max-width:100%;"
-        /></a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <p>
-        <a href="https://discord.gg/dWWDFKb" rel="nofollow"
-          ><img
-            src="https://camo.githubusercontent.com/e00425b0ac4026323168bfbe01cbebe8a434f1fe/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646973636f72642d6a6f696e253230636861742d626c75652e7376673f6c6f676f3d646973636f7264"
-            alt="Discord"
-            data-canonical-src="https://img.shields.io/badge/discord-join%20chat-blue.svg?logo=discord"
-            style="max-width:100%;"
-        /></a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <p>
-        <a
-          href="http://shang.qq.com/wpa/qunwpa?idkey=aa5b2ba04d44820536a6aad31e3d59fb3e43fbed4cbdf1215b204ed61f22036e"
-          rel="nofollow"
-          ><img
-            src="https://camo.githubusercontent.com/f8c1c6086515f245692d811dfbc178481c022a04/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374796c652d67726f7570253230636861742d677265656e2e7376673f6c6f6e6743616368653d74727565266c6162656c3d717126636f6c6f72423d626c7565266c6f676f3d646174613a696d6167652f7376672b786d6c3b6261736536342c50484e325a79426f5a576c6e61485139496a49344f434967646d6c6c64304a76654430694d434177494445794d5341784e445169494864705a48526f505349794e444969494868746247357a50534a6f644852774f693876643364334c6e637a4c6d39795a7938794d4441774c334e325a79492b50484268644767675a44306954545978494445304d6d4d744d544d674d4330794e5330304c544d794c544577624330784d69413159793079494449744d6941304c5445674e53417949444d674d7a55674d6941304e534178656d30774944424e4e6a45674d545179597a4579494441674d6a51744e43417a4d5330784d4777784d694131597a49674d694179494451674d5341314c5449674d79307a4e5341794c54513049444636625441674d4349675a6d6c736244306949325a68595749774e794976506a78775958526f49475139496b30324d5341324e324d794d43417749444d334c5451674e4449744e6d777a4c5446324c54566a4d4330794e7930784d7930314e5330304e6930314e53307a4d6941774c545131494449344c54513149445531646a56734d694178597a55674d6941794d6941324944517a49445a36625441674d4530784d5463674f5442734c5455744d544e6f4c544a6a4c544531494451744d7a55674e7930304f53413361433078597930784e4341774c544d7a4c544d744e446b744e306735544451674f54426a4c5459674d6a41744e4341794f4330794944493449444d674d5341784d6930784e5341784d6930784e53417749444532494445304944517749445132494451776144466a4d7a49674d4341304e6930794e4341304e6930304d434177494441674f5341784e6941784d6941784e534179494441674e4330344c5449744d6a67694c7a3438634746306143426b50534a4e4e446b674e44466a4c5451674d4330344c5455744f4330784d5341774c5463674d7930784d6941334c544579494455674d434134494455674f5341784d534177494459744e4341784d693034494445795454677749444d77597a41674e693030494445784c5467674d54467a4c5467744e6930344c544579597a45744e6941304c54457849446b744d5445674e434177494463674e534133494445794969426d615778735053496a5a6d5a6d4969382b50484268644767675a4430695454673449445577597930784c544d744d544d744e6930794e79303261433078597930784e4341774c54493249444d744d6a63674e6e5978597a45674d5341784e434134494449334944686f4d574d784d794177494449324c5463674d6a63744f4859744d5349675a6d6c736244306949325a68595749774e794976506a78775958526f49475139496b30314e43417a4d474d78494449744d5341314c544d674e533078494441744d7930794c544d744e4330784c544d674d53303149444d744e584d7a494445674d7941305454593249444d78597a45744d53417a4c5455674f53307a624449674d585978624330794944467a4c5451744d7930334944466f4c5446734c5445744d534976506a78775958526f49475139496b30324d5341344d3267744d5777744d7a4d744d79307949444978597a49674d6a49674d5455674d7a59674d7a55674d7a646f4d574d794d43307849444d7a4c54453149444d314c544d33624330794c5449784c544d7a49444d6949475a706247773949694e6d5a6d59694c7a3438634746306143426b50534a4e4d7a49674f4446324d6a4a7a4d5441674d6941794d434178566a6730624330794d43307a4969426d615778735053496a5a5749784f54497a4969382b50484268644767675a443069545445774e6941324d484d744d6a41674e7930304e53413361433078597930794e5341774c5451304c5463744e4455744e30773549446333597a4532494451674d7a59674f4341314d5341336144466a4d5455674d53417a4e53307a494455784c546436625441674d4349675a6d6c7362443069493256694d546b794d794976506a777663335a6e50673d3d"
-            alt="QQ group"
-            data-canonical-src="https://img.shields.io/badge/style-group%20chat-green.svg?longCache=true&amp;label=qq&amp;colorB=blue&amp;logo=data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI4OCIgdmlld0JveD0iMCAwIDEyMSAxNDQiIHdpZHRoPSIyNDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxIDE0MmMtMTMgMC0yNS00LTMyLTEwbC0xMiA1Yy0yIDItMiA0LTEgNSAyIDMgMzUgMiA0NSAxem0wIDBNNjEgMTQyYzEyIDAgMjQtNCAzMS0xMGwxMiA1YzIgMiAyIDQgMSA1LTIgMy0zNSAyLTQ0IDF6bTAgMCIgZmlsbD0iI2ZhYWIwNyIvPjxwYXRoIGQ9Ik02MSA2N2MyMCAwIDM3LTQgNDItNmwzLTF2LTVjMC0yNy0xMy01NS00Ni01NS0zMiAwLTQ1IDI4LTQ1IDU1djVsMiAxYzUgMiAyMiA2IDQzIDZ6bTAgME0xMTcgOTBsLTUtMTNoLTJjLTE1IDQtMzUgNy00OSA3aC0xYy0xNCAwLTMzLTMtNDktN0g5TDQgOTBjLTYgMjAtNCAyOC0yIDI4IDMgMSAxMi0xNSAxMi0xNSAwIDE2IDE0IDQwIDQ2IDQwaDFjMzIgMCA0Ni0yNCA0Ni00MCAwIDAgOSAxNiAxMiAxNSAyIDAgNC04LTItMjgiLz48cGF0aCBkPSJNNDkgNDFjLTQgMC04LTUtOC0xMSAwLTcgMy0xMiA3LTEyIDUgMCA4IDUgOSAxMSAwIDYtNCAxMi04IDEyTTgwIDMwYzAgNi00IDExLTggMTFzLTgtNi04LTEyYzEtNiA0LTExIDktMTEgNCAwIDcgNSA3IDEyIiBmaWxsPSIjZmZmIi8+PHBhdGggZD0iTTg4IDUwYy0xLTMtMTMtNi0yNy02aC0xYy0xNCAwLTI2IDMtMjcgNnYxYzEgMSAxNCA4IDI3IDhoMWMxMyAwIDI2LTcgMjctOHYtMSIgZmlsbD0iI2ZhYWIwNyIvPjxwYXRoIGQ9Ik01NCAzMGMxIDItMSA1LTMgNS0xIDAtMy0yLTMtNC0xLTMgMS01IDMtNXMzIDEgMyA0TTY2IDMxYzEtMSAzLTUgOS0zbDIgMXYxbC0yIDFzLTQtMy03IDFoLTFsLTEtMSIvPjxwYXRoIGQ9Ik02MSA4M2gtMWwtMzMtMy0yIDIxYzIgMjIgMTUgMzYgMzUgMzdoMWMyMC0xIDMzLTE1IDM1LTM3bC0yLTIxLTMzIDMiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMzIgODF2MjJzMTAgMiAyMCAxVjg0bC0yMC0zIiBmaWxsPSIjZWIxOTIzIi8+PHBhdGggZD0iTTEwNiA2MHMtMjAgNy00NSA3aC0xYy0yNSAwLTQ0LTctNDUtN0w5IDc3YzE2IDQgMzYgOCA1MSA3aDFjMTUgMSAzNS0zIDUxLTd6bTAgMCIgZmlsbD0iI2ViMTkyMyIvPjwvc3ZnPg=="
-            style="max-width:100%;"
-        /></a>
-      </p>
-    </div>
-    <div class="col-sm">
-      <p>
-        <a href="https://t1bao.com/c/vigcoin"
-          ><img
-            src="https://img.shields.io/badge/t1bao-blue.svg?colorB=blue&label=%E7%94%B0%E4%B8%80%E5%9D%97%E8%AE%BA%E5%9D%9B&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANwAAADbCAMAAAAxgQ8LAAABRFBMVEUAAACCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoJQsYWCgoJQsYWCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoKCgoKCgoJQsYWCgoKCgoKCgoKCgoKCgoKCgoKCgoJQsYWCgoKCgoJQsYWCgoJQsYWCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoJQsYWCgoKCgoJQsYWCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoJQsYWCgoLvCjR+AAAAanRSTlMAAgMFBwoKDA8VFh4eHyAhISMkJScnKSowMDo6P0BDRUZKS01NTlNVZWVmZ2twcHF8gIKDhISFi4+Rk5ednZ6goKGho6Slp6irrK2tr7Cwtba4uru8xdLa3OHj5ujr7O3u7/f4+fr7/P3+I4NivAAABDlJREFUeNrt29tTEzEUBvDTgktbi0qVYoWFqgiCWEGl3LzUSy8qcpOWQi+AggXy/7/7AphkUygTHPfsfN/bITM7/Mgmm4QJUZsMPJtf22r+Er7Or+bW2vyzAbpKup7k64JR6vknXR3S4gsNwS6NhXgHtESuJVimlbt7Cc3JHgi2Ocw6F9mGtgXrbLttaeGZI8E8RzNhsy2yLgKQ9YjJFq2IQKQSNdiqIiCpxjzvZEUEJhXtzQxviADlhzqrvBKByqxsSx+bVmzFzMNU3y0fpy/1MFM0rYKP039tPTvexcwnN0QsEnI/eReMOz3n7XOexnwvMUpv3gOYO2tL6vLaMDHLcE1/85KnLQWtoRwjdomVNUTxdJOjddyqQwzjrGpdlyAioiWt31jaiByt75aIiLr31fEWI6aJqeNuv5uIxlXwCLHNiCoZJ6KSaRzyTFGhlIhCTcMwZBp1amyGKKVoC8Q66kctRVNKneaNSyuYKVqUy70wb1x4T9Ys0qZcrhDzLMuaTVJOF6a546aV8wbalcsx7rgxWbNLh3Lpcse5ygk0aZOnIYOzb3NWMf6L4uZ7q7x5/cD0VPXDdinOKVmfaBj/ZPdPbPP1hjUuJ/yKO/lgi+sX/sWd3LPETfgZ99QSl/Ez7jlwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEH3P/Gja7Y544Jd/u7fR7b3nzkFeCAAw444IADDjjggAMOOOCAAw444K4b989Ov+5cw4NHLXH/7NwydQ0PzgAHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDAAQcccMABBxxwwAEHHHDA/W/chJ9xE5a4fj/j+m1vPub8i/tofa3T+eJX3DfnGu6sDmbf5awSNz01bvfMd9nBDu6sHsqVy/1CritrDmlXLse448ZkzS5V5XKaO25a1lRpUy5XuOOWZc0mLcrlXpi3LbwnaxZpSplf0rxxaQUzpU2eBd64gvZhCzXlupXgbEu0ZEszRFRStEXOuKJCKRHRuLqoGeFrG1El40TUva/8qBbjaovVFMh+NxHRkgouOzxtTll1LBmGoRCrLHXOqqo4mxoL2l6izPDNjGn9dv5RS2pdJ2rD3GzDNY3QSp41zXk2gvleTrTevAcwd97Ys+NpbH12QzxkIfdzy/Pr7/RIa7Jjwza+XnzxKJW45eP0pR5linXDr36srJFfikBlVt0rbATJtqHt3CKV4NgqEX1cRqtBsVUNn+loQPquEjXNqZH1INjWI21OIGaOuNOOZtqfAg1t87ZtX3iq7GQP+NIOspftZxK53zxpv3OdnP/EFxr8aI2FeIdr0a7RfJ2TrJ4f7brSYjs5Ob+21fjpb9XPxtba/ORAO8MfVvt+rYOg8EMAAAAASUVORK5CYII="
-          />
-        </a>
-      </p>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1 class="border-left">
-      <a name="donation"></a>{{ "NAV-DONATION" | translate }}
-    </h1>
-    <div class="row donation">
-      <div class="col-sm text-center">
-        <p>
-          <a
-            class="btn btn-outline-primary btn-lg"
-            href="https://www.bitcoin.org/"
-          >
-            <fa-icon [icon]="faBitcoin"></fa-icon>
-            {{ "DONATION-BITCOIN" | translate }}
-          </a>
-        </p>
-        <p>1BVaQaUHk46nXf1z7kBfgGG5pfPigUKU25</p>
-      </div>
-      <div class="col-sm text-center">
-        <p>
-          <a
-            class="btn btn-outline-primary btn-lg"
-            href="https://www.getmonero.org/"
-          >
-            <fa-icon [icon]="faMonero"></fa-icon>
-            {{ "DONATION-MONERO" | translate }}
-          </a>
-        </p>
-        <p>
-          43cp7U2RUPSQSRcHBR8nSbVgqWEvJRbwDLjuRxWnsKeo7Ses1c2JhNWgiWXwgpwnhyHRocPVJTQCtURkHkGksm8q7B8ewca
-        </p>
-      </div>
-      <div class="col-sm text-center">
-        <p>
-          <a class="btn btn-outline-primary btn-lg" href="https://vigcoin.org/">
-            <img class="logo" src="/assets/images/logo.png" />
-            {{ "DONATION-VIGCOIN" | translate }}
-          </a>
-        </p>
-        <p>
-          BEeNs16NuyMemqjvWgpynN8EGh7Ri3RGgFmoSquB6YcG8uk1HhZsxB6Jj2KAufgSxsMYsFoFWrFMXMgw7qGKjkZwHj2NGKm
-        </p>
-      </div>
-    </div>
-  </div>
-
   <div class="row about ">
-    <div class="col-sm">
+    <div class="col-12">
       <p>2006-2013 版权所有 &copy; 浙江瑞宏塑胶有限公司 &trade;</p>
-      <p>
-        地址 <fa-icon [icon]="faMapMarker"></fa-icon> :
-        浙江省天台县福溪街道下王邱村&nbsp;&nbsp; 联系电话
-        <fa-icon [icon]="faPhone"></fa-icon> ：+86-576-83882759 &nbsp;&nbsp;
-        传真 <fa-icon [icon]="faFax"></fa-icon> ：+0086-576-83989636
-      </p>
+    </div>
+    <div class="col-4 address">
+      <ul>
+        <li>
+          <fa-icon [icon]="faMapMarker"></fa-icon>
+          <span> 地址 ：</span>
+          浙江省天台县福溪街道下王邱村
+        </li>
+        <li>
+          <fa-icon [icon]="faPhone"></fa-icon>
+          <span>联系电话 ：</span>
+          +86-576-83882759
+        </li>
+        <li>
+          <fa-icon [icon]="faFax"></fa-icon>
+          <span>传真 ：</span>
+          +0086-576-83989636
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
       <p>
         <a href="/admin">网站管理</a>&nbsp;&nbsp; 技术支持:&nbsp;&nbsp;
         <a href="/tech-support"></a>&nbsp;&nbsp; 浏览统计：
@@ -478,6 +253,7 @@
         ></script>
       </p>
     </div>
+    <div class="col-4"></div>
   </div>
 </div>
 <div class="container beian">

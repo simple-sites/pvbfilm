@@ -5,7 +5,7 @@
   img {
     margin-right: 1rem;
     margin-top: 1rem;
-    margin-bottom:  1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -25,12 +25,12 @@
   #particles-js {
     position: absolute;
     left: 0;
-    right:0;
+    right: 0;
     top: 0;
     bottom: 0;
   }
   h1 {
-    color: #DC3542;
+    color: #dc3542;
     text-align: center;
   }
 }
@@ -43,8 +43,6 @@ nav {
     width: 1.5rem;
   }
 }
-
-
 
 .btn-primary {
   background-color: #dc3545;
@@ -116,6 +114,28 @@ h1 {
   }
 }
 
+.address {
+  ul,
+  li {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    >fa-icon {
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+    }
+    > span {
+      display: inline-block;
+      width: 88px;
+      text-align: right;
+      position: relative;
+
+    }
+  }
+}
+
 .wallet {
   text-align: center;
   color: #16b75c;
@@ -128,11 +148,13 @@ h1 {
   }
 }
 
-.mining, .development, .code {
+.mining,
+.development,
+.code {
   h3 {
     font-size: 36px;
     text-align: center;
-    color: #dc3545
+    color: #dc3545;
   }
   img {
     width: 100%;
@@ -150,7 +172,7 @@ h1 {
     text-align: right;
     font-size: 32px;
     padding-right: 20px;
-  } 
+  }
 }
 
 .contact {
