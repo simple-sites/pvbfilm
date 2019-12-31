@@ -1,0 +1,27 @@
+.beian {
+  line-height: 2rem;
+  img {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom:  1.5rem;
+  }
+}
+
+.about {
+  text-align: center;
+  // background-image: url("/assets/images/global.jpg");
+  background-color: #333;
+  color: white;
+  height: 200px;
+  padding: 50px 20px;
+  fa-icon {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+  }
+  span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+  }
+}

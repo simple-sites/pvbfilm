@@ -1,21 +1,5 @@
 @import "app.component.mobile";
 
-.beian {
-  line-height: 2rem;
-  img {
-    margin-right: 1rem;
-    margin-top: 1rem;
-    margin-bottom:  1.5rem;
-  }
-}
-
-.tools {
-  position: fixed;
-  right: 20px;
-  top: 50%;
-  margin-top: -40px;
-}
-
 .jumbotron {
   position: relative;
   background: url("/assets/images/background.jpg");
@@ -158,13 +142,4 @@ h1 {
   img {
     width: 80%;
   }
-}
-
-.about {
-  text-align: center;
-  // background-image: url("/assets/images/global.jpg");
-  background-color: #333;
-  color: white;
-  height: 200px;
-  padding: 50px 20px;
 }
