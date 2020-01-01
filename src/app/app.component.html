@@ -1,123 +1,5 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"
-      ><img class="logo" src="{{ logo }}" /> {{ name | translate }}</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse nav-right">
-      <form class="form-inline">
-        <div class="form-row align-items-center">
-          <div class="col-md-6">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                id="username"
-                placeholder="用户名"
-              />
-            </div>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="input-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="remember" />
-                <label class="form-check-label" for="remember">记住登录</label>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-            <div class="input-group">
-              <button type="submit" class="btn btn-primary btn-sm">登录</button>
-            </div>
-          </div>
-        </div>
-      </form>
-      <ul class="navbar-nav mr-auto"></ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="btn btn-link btn-sm text-muted"
-            ><fa-icon [icon]="faHome"></fa-icon
-            >{{ "NAV-FRONTPAGE" | translate }}</a
-          ><a class="btn btn-link btn-sm text-muted"
-            ><fa-icon [icon]="faBookmark"></fa-icon
-            >{{ "NAV-FAVORITE" | translate }}</a
-          >
-        </li>
-      </ul>
-      <select
-        class="selectpicker"
-        data-width="auto"
-        data-style="btn-light btn-sm"
-      >
-        <option
-          value="en"
-          data-content='<span class="flag-icon flag-icon-us"></span> English '
-          >English</option
-        >
-        <!-- <option value="mx" data-content='<span class="flag-icon flag-icon-mx"></span> Español '>Español</option> -->
-        <option
-          value="zh"
-          data-content='<span class="flag-icon flag-icon-cn"></span> 中文 '
-          >中文</option
-        >
-      </select>
-    </div>
-  </nav>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto"></ul>
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link btn-lg" href=""
-            >{{ "NAV-HOME" | translate }}
-            <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#intro">{{
-            "NAV-INTRO" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#news">{{
-            "NAV-NEWS" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#production">{{
-            "NAV-ROADMAP" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#wallet">{{
-            "NAV-WALLET" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#mining">{{
-            "NAV-MINING" | translate
-          }}</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link btn-lg" href="#contact">{{
-            "NAV-CONTACT" | translate
-          }}</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
+<app-header></app-header>
   <div class="jumbotron">
     <!-- <img src="/assets/images/background.jpg"/> -->
     <div>
@@ -125,7 +7,7 @@
     </div>
     <div class="intro">
       <h1 class="display-4">{{ "WELCOME" | translate }}</h1>
-      <hr class="my-4" />
+      <hr class="my-4"/>
       <div class="container">
         <div class="row">
           <div class="col">
@@ -146,7 +28,7 @@
       <p>
         <b>浙江瑞宏塑胶有限公司</b
         >总部位于----浙江天台，注册资金1000万元，是一家专业生产PVB树脂粉到PVB玻璃中间膜的有限责任公司。公司成立就设两个生产基地，温州化工区为PVB树脂粉生产基地，天台为PVB中间膜生产基地。公司引进国外EDI公司和思恳德公司先进设备，具有全面的质量监控和自我检测系统。
-        公司现有员工520人，其中专业技术人员占18%。温州树脂粉生产基地具有成熟的PVB树脂生产工艺，年产能力12000吨；<br />
+        公司现有员工520人，其中专业技术人员占18%。温州树脂粉生产基地具有成熟的PVB树脂生产工艺，年产能力12000吨；<br/>
         天台PVB胶片生产基地拥有3条先进的PVB胶片生产线，生产车间全部为恒温、恒湿、无尘的净化车间，PVB中间膜年产能力10000吨，并具备生产3.3米宽及1.52MM厚的各种规格PVB胶片的能力。(点击查看全文)
       </p>
     </div>
@@ -189,7 +71,7 @@
         *ngFor="let item of productions; let i = index"
         [ngClass]="{ active: i == 0 }"
       >
-        <img class="d-block w-100" src="{{ item.image }}" />
+        <img class="d-block w-100" src="{{ item.image }}"/>
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ item.title | translate }}</h5>
           <p>{{ item.intro | translate }}</p>
@@ -217,79 +99,6 @@
     </a>
   </div>
 </div>
-
-<div class="container">
-  <div class="row about ">
-    <div class="col-12">
-      <p>2006-2013 版权所有 &copy; 浙江瑞宏塑胶有限公司 &trade;</p>
-    </div>
-    <div class="col-4 address">
-      <ul>
-        <li>
-          <fa-icon [icon]="faMapMarker"></fa-icon>
-          <span> 地址 ：</span>
-          浙江省天台县福溪街道下王邱村
-        </li>
-        <li>
-          <fa-icon [icon]="faPhone"></fa-icon>
-          <span>联系电话 ：</span>
-          +86-576-83882759
-        </li>
-        <li>
-          <fa-icon [icon]="faFax"></fa-icon>
-          <span>传真 ：</span>
-          +0086-576-83989636
-        </li>
-      </ul>
-    </div>
-    <div class="col-4">
-      <p>
-        <a href="/admin">网站管理</a>&nbsp;&nbsp; 技术支持:&nbsp;&nbsp;
-        <a href="/tech-support"></a>&nbsp;&nbsp; 浏览统计：
-        <script
-          src="http://s73.cnzz.com/stat.php?id=1087207&web_id=1087207&show=pic"
-          language="JavaScript"
-          charset="gb2312"
-        ></script>
-      </p>
-    </div>
-    <div class="col-4"></div>
-  </div>
-</div>
-<div class="container beian">
-  <div class="row">
-    <div class="col-12 text-center">
-      <img src="/assets/images/beian.png" />
-      <a
-        class="text-decoration-none text-muted"
-        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{
-          beian.code
-        }}"
-      >
-        {{ beian.authority }}
-        {{ beian.code }}号</a
-      >
-    </div>
-  </div>
-</div>
-
-<div class="tools d-none d-sm-block">
-  <div class="btn-group-vertical">
-    <a type="button" class="btn btn-outline-secondary " title="微信聊天"
-      ><fa-icon class="text-success" [icon]="faWeixin"></fa-icon
-    ></a>
-    <a type="button" class="btn btn-outline-secondary" title="QQ聊天"
-      ><fa-icon class="text-primary" [icon]="faQq"></fa-icon
-    ></a>
-    <a type="button" class="btn btn-outline-secondary" title="微博关注"
-      ><fa-icon class="text-danger" [icon]="faWeibo"></fa-icon
-    ></a>
-    <a type="button" class="btn btn-outline-secondary" title="电话直拔"
-      ><fa-icon class="text-info" [icon]="faPhone"></fa-icon
-    ></a>
-    <a type="button" class="btn btn-outline-secondary" title="传真资料"
-      ><fa-icon class="text-primary" [icon]="faFax"></fa-icon
-    ></a>
-  </div>
-</div>
+<app-footer></app-footer>
+<app-floating-bar></app-floating-bar>
 <router-outlet></router-outlet>

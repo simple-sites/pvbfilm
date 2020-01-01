@@ -6,8 +6,6 @@ import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import { Title } from "@angular/platform-browser";
 
 import {
-  faWindows,
-  faLinux,
   faBitcoin,
   faMonero,
   faWeixin,
@@ -34,8 +32,6 @@ export class AppComponent {
   title = "vigcoin";
   supportedLanguages = ["en", "zh"];
 
-  faWindows = faWindows;
-  faLinux = faLinux;
   faCloud = faCloud;
   faDownload = faDownload;
   faMonero = faMonero;
@@ -51,7 +47,6 @@ export class AppComponent {
   faWeibo = faWeibo;
 
   active = 0;
-
 
   // Company info
   name = "NAV-NAME";
