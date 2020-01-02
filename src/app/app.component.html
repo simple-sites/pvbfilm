@@ -1,5 +1,49 @@
-<div class="container">
 <app-header></app-header>
+<div class="container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse nav-right" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto"></ul>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link btn-lg" href=""
+            >{{ "NAV-HOME" | translate }}
+            <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#intro">{{
+            "NAV-INTRO" | translate
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#news">{{
+            "NAV-NEWS" | translate
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#production">{{
+            "NAV-PRODUCTS" | translate
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#wallet">{{
+            "NAV-WALLET" | translate
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#mining">{{
+            "NAV-MINING" | translate
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-lg" href="#contact">{{
+            "NAV-CONTACT" | translate
+          }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="jumbotron">
     <!-- <img src="/assets/images/background.jpg"/> -->
     <div>
@@ -55,15 +99,15 @@
 </div>
 <div class="container">
   <h1 class="border-left">
-    <a name="production"></a>{{ "NAV-ROADMAP" | translate }}
+    <a name="production"></a>{{ "NAV-PRODUCTS" | translate }}
   </h1>
-  <div id="carouselRoadMap" class="carousel slide" data-ride="carousel">
+  <div id="carouselPRODUCTS" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselRoadMap" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselRoadMap" data-slide-to="1"></li>
-      <li data-target="#carouselRoadMap" data-slide-to="2"></li>
-      <li data-target="#carouselRoadMap" data-slide-to="3"></li>
-      <li data-target="#carouselRoadMap" data-slide-to="4"></li>
+      <li data-target="#carouselPRODUCTS" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselPRODUCTS" data-slide-to="1"></li>
+      <li data-target="#carouselPRODUCTS" data-slide-to="2"></li>
+      <li data-target="#carouselPRODUCTS" data-slide-to="3"></li>
+      <li data-target="#carouselPRODUCTS" data-slide-to="4"></li>
     </ol>
     <div class="carousel-inner">
       <div
@@ -81,7 +125,7 @@
     </div>
     <a
       class="carousel-control-prev"
-      href="#carouselRoadMap"
+      href="#carouselPRODUCTS"
       role="button"
       data-slide="prev"
     >
@@ -90,7 +134,7 @@
     </a>
     <a
       class="carousel-control-next"
-      href="#carouselRoadMap"
+      href="#carouselPRODUCTS"
       role="button"
       data-slide="next"
     >
