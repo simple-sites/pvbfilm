@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FloatingBarComponent } from './floating-bar/floating-bar.component';
 import { CertificateComponent } from './certificate/certificate.component';
 import { HeaderComponent } from './header/header.component';
+import { IntroComponent } from './intro/intro.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,7 +28,8 @@ export function createTranslateLoader(http: HttpClient) {
     FooterComponent,
     FloatingBarComponent,
     CertificateComponent,
-    HeaderComponent
+    HeaderComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
