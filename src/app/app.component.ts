@@ -29,7 +29,6 @@ import {
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = "vigcoin";
   supportedLanguages = ["en", "zh"];
 
   faCloud = faCloud;
@@ -71,101 +70,6 @@ export class AppComponent {
     domain: "pvbfilm.com"
   };
 
-  productions = [
-    {
-      image: "/assets/images/roadmap/1.jpg",
-      title: "ROADMAP-T1",
-      intro: "ROADMAP-T1-INTRO",
-      state: "ROADMAP-STATE-DONE"
-    },
-    {
-      image: "/assets/images/roadmap/2.jpg",
-      title: "ROADMAP-T2",
-      intro: "ROADMAP-T2-INTRO",
-      state: "ROADMAP-STATE-PROGRESSING"
-    },
-    {
-      image: "/assets/images/roadmap/3.jpg",
-      title: "ROADMAP-T3",
-      intro: "ROADMAP-T3-INTRO",
-      state: "ROADMAP-STATE-PLANNED"
-    },
-    {
-      image: "/assets/images/roadmap/4.jpg",
-      title: "ROADMAP-T4",
-      intro: "ROADMAP-T4-INTRO",
-      state: "ROADMAP-STATE-PLANNED"
-    },
-    {
-      image: "/assets/images/roadmap/5.jpg",
-      title: "ROADMAP-T4",
-      intro: "ROADMAP-T4-INTRO",
-      state: "ROADMAP-STATE-PLANNED"
-    }
-  ];
-
-  news = [
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    }
-  ];
   constructor(
     private translate: TranslateService,
     private titleService: Title
