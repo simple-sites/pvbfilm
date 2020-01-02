@@ -7,3 +7,15 @@ h1 {
   margin-bottom: 20px;
   color: #999;
 }
+
+table {
+  tbody {
+    tr {
+      color: #999;
+      th {
+        text-align: right;
+        font-weight: normal;
+      }
+    }
+  }
+}

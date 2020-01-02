@@ -1,18 +1,45 @@
 <div class="container">
   <h1 class="border-left">
-    <a name="info"></a>{{ "NAV-CONTACT" | translate }}</h1>
+    <a name="info"></a>{{ "NAV-CONTACT" | translate }}
+  </h1>
   <div class="row info">
     <div class="col-12">
-    电        话： 86 0576 83882759 
-
-传        真： 86 0576 83989636
-
-地        址： 中国 浙江 天台县福溪街道下王邱村
-
-邮        编： 317200 
-
-邮        箱： f759@263.net pvb@pvbfilm.com
-
-公 司  主 页： http://www.pvbfilm.com
+      <table class="table table-borderless">
+        <tbody>
+          <tr>
+            <th scope="row">{{ contact.phone.key }}</th>
+            <td>{{ contact.phone.value }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ contact.fax.key }}</th>
+            <td>{{ contact.phone.value }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ contact.address.key }}</th>
+            <td>{{ contact.address.value }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ contact.email.key }}</th>
+            <td>{{ contact.email.value }}</td>
+          </tr>
+          <tr>
+            <th scope="row">{{ contact.homepage.key }}</th>
+            <td>
+              <a href="{{ contact.homepage.value }}">{{
+                contact.homepage.value
+              }}</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">{{ contact.map.key }}</th>
+            <td>
+              <div id="map">
+                <img src="/assets/images/map.png" />
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

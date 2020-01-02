@@ -16,7 +16,7 @@
         *ngFor="let item of productions; let i = index"
         [ngClass]="{ active: i == 0 }"
       >
-        <img class="d-block w-100" src="{{ item.image }}"/>
+        <img class="d-block w-100" src="{{ item.image }}" />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ item.title | translate }}</h5>
           <p>{{ item.intro | translate }}</p>
@@ -43,3 +43,4 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+</div>
