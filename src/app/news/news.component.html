@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="border-left">
+    <a name="info"></a>{{ "NAV-NEWS" | translate }}</h1>
+  <div class="row info">
+    <div class="col-12">
+      <table class="table table-hover">
+        <tbody>
+          <tr *ngFor="let item of news; let i = index">
+            <th scope="row"></th>
+            <td class="text-left">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </td>
+            <td class="text-right">{{ item.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
