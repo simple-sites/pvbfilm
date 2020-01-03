@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import {
   faMapMarker,
   faFax,
@@ -6,9 +7,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.scss"]
 })
 export class FooterComponent implements OnInit {
 
@@ -16,14 +17,19 @@ export class FooterComponent implements OnInit {
   faFax = faFax;
   faPhone = faPhone;
 
-  beian = {
-    code: "33102302000027",
-    authority: "浙公网安备"
-  };
+  beian;
+  company;
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
+    this.http.get("/assets/api/beian.json").subscribe((data) => {
+      this.beian = data;
+    });
+    this.http.get("/assets/api/contact.json").subscribe((data) => {
+      this.company = data;
+    });
   }
-
 }

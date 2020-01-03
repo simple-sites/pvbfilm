@@ -1,31 +1,25 @@
 <div class="container">
-  <div class="row about ">
+  <div class="row about" *ngIf="company">
     <div class="col-12">
-      <p>2006-2013 版权所有 &copy; 浙江瑞宏塑胶有限公司 &trade;</p>
+      <p>2006-2013 版权所有 &copy; {{company.name}} &trade;</p>
     </div>
-    <div class="col-8 text-left">
+    <div class="col-md-6 col-sm-12 text-left">
       <p>
         <fa-icon [icon]="faMapMarker"></fa-icon>
-        <span>地址：</span>浙江省天台县福溪街道下王邱村<br/>
+        <span>{{company.address.key}}</span>{{company.address.value}}<br/>
         <fa-icon [icon]="faPhone"></fa-icon>
-        <span>联系电话：</span>+86-576-83882759<br/>
+        <span>{{company.phone.key}}</span>{{company.phone.value}}<br/>
         <fa-icon [icon]="faFax"></fa-icon>
-        <span>传真：</span>+0086-576-83989636<br/>
+        <span>{{company.fax.key}}</span>{{company.fax.value}}<br/>
       </p>
     </div>
-    <div class="col-4">
-
-      <p>
-        <a href="/admin">网站管理</a>&nbsp;&nbsp; 技术支持:&nbsp;&nbsp;
-        <a href="/tech-support"></a>&nbsp;&nbsp; 浏览统计：
-        <script
-          src="http://s73.cnzz.com/stat.php?id=1087207&web_id=1087207&show=pic"
-          language="JavaScript"
-          charset="gb2312"
-        ></script>
+    <div class="col-md-6 col-sm-12">
+      <p class="text-left">
+        <a href="/admin">网站管理</a><br/>
+        技术支持：<a href="https://t1bao.com">田一块网络科技有限公司</a><br/>
+        浏览统计：<a href="aaa"><img src="/assets/images/cnzz.gif"/></a>
       </p>
     </div>
-    <div class="col-4"></div>
   </div>
 </div>
 
@@ -38,6 +32,7 @@
         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{
           beian.code
         }}"
+        *ngIf="beian"
       >
         {{ beian.authority }}
         {{ beian.code }}号</a

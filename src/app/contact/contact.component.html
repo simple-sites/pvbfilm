@@ -4,7 +4,7 @@
   </h1>
   <div class="row info">
     <div class="col-12">
-      <table class="table table-borderless">
+      <table class="table table-borderless" *ngIf="contact">
         <tbody>
           <tr>
             <th scope="row">{{ contact.phone.key }}</th>
