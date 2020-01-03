@@ -22,6 +22,7 @@ import {
   faFax,
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: "app-root",
@@ -70,14 +71,29 @@ export class AppComponent {
     domain: "pvbfilm.com"
   };
 
+  url = "home";
+
   constructor(
     private translate: TranslateService,
-    private titleService: Title
+    private titleService: Title,
+    private router: Router
   ) {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       translate.get("TITLE").subscribe((res: string) => {
         titleService.setTitle(res);
       });
+    });
+    router.events.subscribe(event => {
+      console.log(event);
+      if (event instanceof NavigationStart) {
+        if (event.url) {
+          this.url = event.url.substr(1);
+        }
+      }
+      // NavigationEnd
+      // NavigationCancel
+      // NavigationError
+      // RoutesRecognized
     });
   }
   getLocaleString() {
@@ -101,7 +117,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    particlesJS.load("particles-js", "/assets/particles.json", function() {
+    particlesJS.load("particles-js", "/assets/particles.json", function () {
       console.log("callback - particles.js config loaded");
     });
     $(".carousel").carousel({
