@@ -3,8 +3,11 @@
     <a name="news"></a>{{ "NAV-CERTIFICATE" | translate }}
   </h1>
   <div class="row">
-    <div class="col-12">
-      <div class="card" *ngFor="let item of certificates; let i = index">
+    <div
+      class="col-sm-12 col-md-6"
+      *ngFor="let item of certificates; let i = index"
+    >
+      <div class="card">
         <img src="{{ item.url }}" class="card-img-top" alt="{{ item.title }}" />
         <div class="card-body">
           <h5 class="card-title text-center">{{ item.title }}</h5>
@@ -12,4 +15,5 @@
       </div>
     </div>
   </div>
+  <hr />
 </div>
