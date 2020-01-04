@@ -17,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { NewsComponent } from './news/news.component';
 import { ProductComponent } from './product/product.component';
+import { StoreComponent } from './store/store.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -33,7 +34,8 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     IntroComponent,
     NewsComponent,
-    ProductComponent
+    ProductComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

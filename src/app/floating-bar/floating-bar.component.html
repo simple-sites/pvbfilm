@@ -1,29 +1,48 @@
 <div class="tools d-none d-sm-block">
   <div class="btn-group-vertical">
-    <a type="button" class="btn btn-outline-secondary " title="微信聊天"
-      >
-      <fa-icon class="text-success" [icon]="faWeixin"></fa-icon
-    >
+    <a type="button" class="btn btn-outline-secondary " title="微信聊天">
+      <fa-icon class="text-success" [icon]="faWeixin"></fa-icon>
     </a>
-    <a type="button" class="btn btn-outline-secondary" title="QQ聊天"
-      >
-      <fa-icon class="text-primary" [icon]="faQq"></fa-icon
-    >
+    <a type="button" class="btn btn-outline-secondary" title="QQ聊天">
+      <fa-icon class="text-primary" [icon]="faQq"></fa-icon>
     </a>
-    <a type="button" class="btn btn-outline-secondary" title="微博关注"
-      >
-      <fa-icon class="text-danger" [icon]="faWeibo"></fa-icon
-    >
+    <a type="button" class="btn btn-outline-secondary" title="微博关注">
+      <fa-icon class="text-danger" [icon]="faWeibo"></fa-icon>
     </a>
-    <a type="button" class="btn btn-outline-secondary" title="电话直拔"
-      >
-      <fa-icon class="text-info" [icon]="faPhone"></fa-icon
-    >
+    <a type="button" class="btn btn-outline-secondary" title="电话直拔">
+      <fa-icon class="text-info" [icon]="faPhone"></fa-icon>
     </a>
-    <a type="button" class="btn btn-outline-secondary" title="传真资料"
-      >
-      <fa-icon class="text-primary" [icon]="faFax"></fa-icon
+    <a type="button" class="btn btn-outline-secondary" title="传真资料">
+      <fa-icon class="text-primary" [icon]="faFax"></fa-icon>
+    </a>
+    <a
+      type="button"
+      class="btn btn-outline-secondary "
+      title="天眼查"
+      href="{{ tainyancha }}"
     >
+      <img src="{{ tainyanchaIcon }}" />
+    </a>
+  </div>
+</div>
+
+<div class="store d-none d-sm-block">
+  <div class="btn-group-vertical">
+    <a type="button" class="btn btn-outline-secondary " title="阿里巴巴">
+      <img src="{{ alibabaIcon }}" />
+    </a>
+    <a type="button" class="btn btn-outline-secondary" title="天猫商城">
+      <img src="{{ tianmaoIcon }}" />
+    </a>
+    <a type="button" class="btn btn-outline-secondary" title="淘宝商城">
+      <img src="{{ taobaoIcon }}" />
+    </a>
+    <!-- <a type="button" class="btn btn-outline-secondary" title="电话直拔"
+      >
+      <img src="{{ebayIcon}}"/>
+    </a> -->
+    <a type="button" class="btn btn-outline-secondary" title="传真资料">
+      <img src="{{ amazonIcon }}" />
     </a>
   </div>
 </div>
