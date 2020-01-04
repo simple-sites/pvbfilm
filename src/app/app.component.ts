@@ -66,7 +66,6 @@ export class AppComponent {
   };
 
   about;
-  logo = "/assets/images/logo.png";
   mail = {
     domain: "pvbfilm.com"
   };
@@ -86,8 +85,9 @@ export class AppComponent {
     router.events.subscribe(event => {
       console.log(event);
       if (event instanceof NavigationStart) {
-        if (event.url) {
-          this.url = event.url.substr(1);
+        const tab = event.url.substr(1);
+        if (tab) {
+          this.url = tab;
         }
       }
       // NavigationEnd
