@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: "app-news",
   templateUrl: "./news.component.html",
@@ -7,81 +8,32 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class NewsComponent implements OnInit {
 
+  url = "/assets/api/news.json";
+
   page = 1;
-  limit = 10;
+  limit = 1;
   total = 10;
   news = [
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    },
-    {
-      id: 1,
-      url: "http://localhost:4200/#intro",
-      title: "pvb的应用有那些？",
-      date: "2013-5-29"
-    }
   ];
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private http: HttpClient
   ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
       const page = parseInt(param.get("page"), 10);
       this.page = page > 1 ? page : 1;
+
+      this.http.get(this.url).subscribe((data: any) => {
+        this.limit = data.limit;
+        this.total = data.total;
+        this.news = data.news;
+      });
     });
+
+
   }
 
 }
