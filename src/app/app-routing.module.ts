@@ -8,6 +8,7 @@ import { NewsComponent } from "./news/news.component";
 import { ProductComponent } from "./product/product.component";
 import { CertificateComponent } from "./certificate/certificate.component";
 import { FactoryComponent } from "./factory/factory.component";
+import { NewsItemComponent } from "./news-item/news-item.component";
 
 const routes: Routes = [
   { path: "intro", component: IntroComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "factory", component: FactoryComponent },
   { path: "news", component: NewsComponent },
   { path: "news/page/:page", component: NewsComponent },
+  { path: "news/item/:id/:page", component: NewsItemComponent },
   { path: "contact", component: ContactComponent },
   { path: "", component: HomeComponent },
 ];

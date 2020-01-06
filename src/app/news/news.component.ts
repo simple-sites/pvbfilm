@@ -32,8 +32,6 @@ export class NewsComponent implements OnInit {
         this.news = data.news;
       });
     });
-
-
   }
 
 }

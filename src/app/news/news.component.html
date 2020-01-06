@@ -7,7 +7,7 @@
           <tr *ngFor="let item of news; let i = index">
             <th scope="row"></th>
             <td class="text-left">
-              <a href="{{ item.url }}">{{ item.title }}</a>
+              <a href="/news/item/{{ item.id }}/{{ page }}">{{ item.title }}</a>
             </td>
             <td class="text-right">{{ item.date }}</td>
           </tr>
