@@ -1,25 +1,21 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { HttpClient } from '@angular/common/http';
+import { HttpClient } from "@angular/common/http";
 @Component({
   selector: "app-news",
   templateUrl: "./news.component.html",
   styleUrls: ["./news.component.scss"]
 })
 export class NewsComponent implements OnInit {
-
   url = "/assets/api/news.json";
 
   page = 1;
   limit = 1;
   total = 10;
-  news = [
-  ];
+  columns = 5;
+  news = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private http: HttpClient
-  ) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
@@ -33,5 +29,4 @@ export class NewsComponent implements OnInit {
       });
     });
   }
-
 }

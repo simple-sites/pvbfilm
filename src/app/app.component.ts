@@ -85,7 +85,8 @@ export class AppComponent {
     router.events.subscribe(event => {
       console.log(event);
       if (event instanceof NavigationStart) {
-        const tab = event.url.substr(1);
+        let tab = event.url.substr(1);
+        tab = tab.split("/")[0];
         if (tab) {
           this.url = tab;
         }

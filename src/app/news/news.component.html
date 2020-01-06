@@ -17,20 +17,33 @@
     <div class="col-12 text-right">
       <ul class="pagination justify-content-right">
         <li class="page-item" [ngClass]="{ disabled: page == 1 }">
-          <a
-            class="page-link"
-            href="/news/page/{{ page - 1 }}"
-            aria-label="Previous"
-          >
+          <a class="page-link" href="/news/page/1" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item" *ngIf="page > 2">
+
+        <li
+          class="page-item"
+          *ngIf="page - 4 > total - columns && page - 4 >= 1"
+        >
+          <a class="page-link" href="/news/page/{{ page - 4 }}">{{
+            page - 4
+          }}</a>
+        </li>
+        <li
+          class="page-item"
+          *ngIf="page - 3 > total - columns && page - 3 >= 1"
+        >
+          <a class="page-link" href="/news/page/{{ page - 3 }}">{{
+            page - 3
+          }}</a>
+        </li>
+        <li class="page-item" *ngIf="page - 2 >= 1">
           <a class="page-link" href="/news/page/{{ page - 2 }}">{{
             page - 2
           }}</a>
         </li>
-        <li class="page-item" *ngIf="page > 1">
+        <li class="page-item" *ngIf="page - 1 >= 1">
           <a class="page-link" href="/news/page/{{ page - 1 }}">{{
             page - 1
           }}</a>
@@ -48,8 +61,18 @@
             page + 2
           }}</a>
         </li>
+        <li class="page-item" *ngIf="page + 3 <= total && page + 3 <= columns">
+          <a class="page-link" href="/news/page/{{ page + 3 }}">{{
+            page + 3
+          }}</a>
+        </li>
+        <li class="page-item" *ngIf="page + 4 <= total && page + 4 <= columns">
+          <a class="page-link" href="/news/page/{{ page + 4 }}">{{
+            page + 4
+          }}</a>
+        </li>
         <li class="page-item" [ngClass]="{ disabled: page == total }">
-          <a class="page-link" href="#" aria-label="Next">
+          <a class="page-link" href="/news/page/{{ total }}" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
