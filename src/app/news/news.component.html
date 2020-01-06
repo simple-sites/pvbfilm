@@ -16,15 +16,39 @@
     </div>
     <div class="col-12 text-right">
       <ul class="pagination justify-content-right">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
+        <li class="page-item" [ngClass]="{ disabled: page == 1 }">
+          <a
+            class="page-link"
+            href="/news/page/{{ page - 1 }}"
+            aria-label="Previous"
+          >
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
+        <li class="page-item" *ngIf="page > 2">
+          <a class="page-link" href="/news/page/{{ page - 2 }}">{{
+            page - 2
+          }}</a>
+        </li>
+        <li class="page-item" *ngIf="page > 1">
+          <a class="page-link" href="/news/page/{{ page - 1 }}">{{
+            page - 1
+          }}</a>
+        </li>
+        <li class="page-item disabled">
+          <a class="page-link" href="/news/page/{{ page }}">{{ page }}</a>
+        </li>
+        <li class="page-item" *ngIf="page + 1 <= total">
+          <a class="page-link" href="/news/page/{{ page + 1 }}">{{
+            page + 1
+          }}</a>
+        </li>
+        <li class="page-item" *ngIf="page + 2 <= total">
+          <a class="page-link" href="/news/page/{{ page + 2 }}">{{
+            page + 2
+          }}</a>
+        </li>
+        <li class="page-item" [ngClass]="{ disabled: page == total }">
           <a class="page-link" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
           </a>
