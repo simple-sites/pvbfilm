@@ -10,7 +10,7 @@ import {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  logo = "/assets/images/logo.png";
+  logo = "assets/images/logo.png";
   faHome = faHome;
   faBookmark = faBookmark;
   constructor() { }

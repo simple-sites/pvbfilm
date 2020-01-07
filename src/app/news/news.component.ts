@@ -7,13 +7,15 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./news.component.scss"]
 })
 export class NewsComponent implements OnInit {
-  url = "/assets/api/news.json";
+  url = "assets/api/news.json";
 
   page = 1;
   limit = 1;
   total = 10;
   columns = 5;
   news = [];
+
+  hash = "#";
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 

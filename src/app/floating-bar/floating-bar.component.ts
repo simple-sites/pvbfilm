@@ -24,12 +24,12 @@ export class FloatingBarComponent implements OnInit {
   faQq = faQq;
   faWeibo = faWeibo;
 
-  alibabaIcon = "/assets/images/alibaba-512.png";
-  tianmaoIcon = "/assets/images/tianmao.png";
-  taobaoIcon = "/assets/images/taobao.jpg";
-  amazonIcon = "/assets/images/amazon.png";
+  alibabaIcon = "assets/images/alibaba-512.png";
+  tianmaoIcon = "assets/images/tianmao.png";
+  taobaoIcon = "assets/images/taobao.jpg";
+  amazonIcon = "assets/images/amazon.png";
 
-  tainyanchaIcon = "/assets/images/tianyancha.jpeg";
+  tainyanchaIcon = "assets/images/tianyancha.jpeg";
   tianyancha = "https://www.tianyancha.com/company/1320234911";
 
   constructor() { }

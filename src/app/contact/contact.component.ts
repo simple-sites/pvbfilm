@@ -7,7 +7,7 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./contact.component.scss"]
 })
 export class ContactComponent implements OnInit {
-  url = "/assets/api/contact.json";
+  url = "assets/api/contact.json";
   contact;
 
   constructor(

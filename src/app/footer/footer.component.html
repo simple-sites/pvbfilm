@@ -1,23 +1,26 @@
 <div class="container">
   <div class="row about" *ngIf="company">
     <div class="col-12">
-      <p>2006-2013 版权所有 &copy; {{company.name}} &trade;</p>
+      <p>2006-2013 版权所有 &copy; {{ company.name }} &trade;</p>
     </div>
     <div class="col-md-6 col-sm-12 text-left">
       <p>
         <fa-icon [icon]="faMapMarker"></fa-icon>
-        <span>{{company.address.key}}</span>{{company.address.value}}<br/>
+        <span>{{ company.address.key }}</span
+        >{{ company.address.value }}<br />
         <fa-icon [icon]="faPhone"></fa-icon>
-        <span>{{company.phone.key}}</span>{{company.phone.value}}<br/>
+        <span>{{ company.phone.key }}</span
+        >{{ company.phone.value }}<br />
         <fa-icon [icon]="faFax"></fa-icon>
-        <span>{{company.fax.key}}</span>{{company.fax.value}}<br/>
+        <span>{{ company.fax.key }}</span
+        >{{ company.fax.value }}<br />
       </p>
     </div>
     <div class="col-md-6 col-sm-12">
       <p class="text-left">
-        <a href="/admin">网站管理</a><br/>
-        技术支持：<a href="https://t1bao.com">田一块网络科技有限公司</a><br/>
-        浏览统计：<a href="aaa"><img src="/assets/images/cnzz.gif"/></a>
+        <a href="/admin">网站管理</a><br />
+        技术支持：<a href="https://t1bao.com">田一块网络科技有限公司</a><br />
+        浏览统计：<a href="aaa"><img src="assets/images/cnzz.gif"/></a>
       </p>
     </div>
   </div>
@@ -26,7 +29,7 @@
 <div class="container beian">
   <div class="row">
     <div class="col-12 text-center">
-      <img src="/assets/images/beian.png"/>
+      <img src="{{ beian.image }}" />
       <a
         class="text-decoration-none text-muted"
         href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{

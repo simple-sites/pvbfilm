@@ -1,7 +1,7 @@
 
 .jumbotron {
   position: relative;
-  background: url("/assets/images/background.jpg");
+  background: url("../assets/images/background.jpg");
   background-size: cover;
   color: white;
   border-radius: 0;
@@ -60,7 +60,7 @@ h1 {
 
 .vigcoin {
   background-color: #dc3545;
-  background-image: url("/assets/images/vigcoin.png");
+  background-image: url("../assets/images/vigcoin.png");
   padding-bottom: 20px;
   opacity: 0.9;
   h1 {

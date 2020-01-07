@@ -9,15 +9,15 @@ export class CertificateComponent implements OnInit {
 
   certificates = [
     {
-      url: "/assets/images/zs1.jpg",
+      url: "assets/images/zs1.jpg",
       title: "资质1",
     },
     {
-      url: "/assets/images/zs2.jpg",
+      url: "assets/images/zs2.jpg",
       title: "资质2",
     },
     {
-      url: "/assets/images/zs4.jpg",
+      url: "assets/images/zs4.jpg",
       title: "资质3",
     }
   ];

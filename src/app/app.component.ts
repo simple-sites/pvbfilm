@@ -71,6 +71,7 @@ export class AppComponent {
   };
 
   url = "home";
+  hash = "#";
 
   constructor(
     private translate: TranslateService,

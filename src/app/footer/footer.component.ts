@@ -25,10 +25,10 @@ export class FooterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.http.get("/assets/api/beian.json").subscribe((data) => {
+    this.http.get("assets/api/beian.json").subscribe((data) => {
       this.beian = data;
     });
-    this.http.get("/assets/api/contact.json").subscribe((data) => {
+    this.http.get("assets/api/contact.json").subscribe((data) => {
       this.company = data;
     });
   }
