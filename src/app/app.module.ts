@@ -20,6 +20,7 @@ import { ProductComponent } from './product/product.component';
 import { StoreComponent } from './store/store.component';
 import { FactoryComponent } from './factory/factory.component';
 import { NewsItemComponent } from './news-item/news-item.component';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,7 +40,8 @@ export function createTranslateLoader(http: HttpClient) {
     ProductComponent,
     StoreComponent,
     FactoryComponent,
-    NewsItemComponent
+    NewsItemComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,

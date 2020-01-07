@@ -10,7 +10,6 @@ export class NewsComponent implements OnInit {
   url = "assets/api/news.json";
 
   page = 1;
-  limit = 1;
   total = 10;
   columns = 5;
   news = [];
@@ -25,7 +24,6 @@ export class NewsComponent implements OnInit {
       this.page = page > 1 ? page : 1;
 
       this.http.get(this.url).subscribe((data: any) => {
-        this.limit = data.limit;
         this.total = data.total;
         this.news = data.news;
       });
