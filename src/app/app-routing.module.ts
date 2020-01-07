@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: "product/page/:page", component: ProductComponent },
   { path: "certificate", component: CertificateComponent },
   { path: "factory", component: FactoryComponent },
+  { path: "factory/page/:page", component: FactoryComponent },
   { path: "news", component: NewsComponent },
   { path: "news/page/:page", component: NewsComponent },
   { path: "news/item/:id/:page", component: NewsItemComponent },

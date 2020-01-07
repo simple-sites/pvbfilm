@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, SimpleChanges, OnChanges } from "@angular/core";
+import { Component, Input, SimpleChanges, OnChanges } from "@angular/core";
 
 @Component({
   selector: "app-paginator",
   templateUrl: "./paginator.component.html",
   styleUrls: ["./paginator.component.scss"]
 })
-export class PaginatorComponent implements OnInit, OnChanges {
+
+export class PaginatorComponent implements OnChanges {
 
   @Input()
   hash = "#";
