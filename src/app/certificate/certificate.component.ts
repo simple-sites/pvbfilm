@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-certificate",
@@ -8,22 +10,26 @@ import { Component, OnInit } from "@angular/core";
 export class CertificateComponent implements OnInit {
 
   certificates = [
-    {
-      url: "assets/images/zs1.jpg",
-      title: "资质1",
-    },
-    {
-      url: "assets/images/zs2.jpg",
-      title: "资质2",
-    },
-    {
-      url: "assets/images/zs4.jpg",
-      title: "资质3",
-    }
   ];
-  constructor() { }
+  url = "assets/api/certificate.json";
+
+  page = 1;
+  total = 10;
+  columns = 5;
+  hash = "#";
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(param => {
+      const page = parseInt(param.get("page"), 10);
+      this.page = page > 1 ? page : 1;
+
+      this.http.get(this.url).subscribe((data: any) => {
+        this.total = data.total;
+        this.certificates = data.certificates;
+      });
+    });
   }
 
 }

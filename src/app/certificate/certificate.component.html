@@ -14,6 +14,16 @@
         </div>
       </div>
     </div>
+
+    <app-paginator
+    url="/news/page/"
+    hash="{{ hash }}"
+    total="{{ total }}"
+    columns="{{ columns }}"
+    page="{{ page }}"
+    *ngIf = "total > 1"
+  >
+  </app-paginator>
   </div>
   <hr />
 </div>
