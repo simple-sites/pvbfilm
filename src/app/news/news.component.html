@@ -7,23 +7,22 @@
           <tr *ngFor="let item of news; let i = index">
             <th scope="row"></th>
             <td class="text-left">
-              <a href="{{hash}}/news/item/{{ item.id }}/{{ page }}">{{ item.title }}</a>
+              <a href="{{ hash }}/news/item/{{ item.id }}/{{ page }}">{{
+                item.title
+              }}</a>
             </td>
             <td class="text-right">{{ item.date }}</td>
           </tr>
         </tbody>
       </table>
+      <app-paginator
+        url="/news/page/"
+        hash="{{ hash }}"
+        total="{{ total }}"
+        columns="{{ columns }}"
+        page="{{ page }}"
+      >
+      </app-paginator>
     </div>
-    <app-paginator
-
-    url = "/news/page/"
-    hash = "{{hash}}"
-    total = {{total}}
-    columns = {{columns}}
-    page = {{page}}
-    >
-
-    </app-paginator
-    >
   </div>
 </div>

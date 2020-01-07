@@ -6,7 +6,7 @@
   <div class="row">
     <div
       class="col-sm-12 col-md-4 text-center"
-      *ngFor="let item of productions; let i = index"
+      *ngFor="let item of products; let i = index"
     >
       <div class="card" [ngClass]="{ active: i == 0 }">
         <img
@@ -25,21 +25,14 @@
   <hr />
   <div class="row">
     <div class="col-12 text-right">
-      <ul class="pagination justify-content-right">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
+      <app-paginator
+        url="/product/page/"
+        hash="{{ hash }}"
+        total="{{ total }}"
+        columns="{{ columns }}"
+        page="{{ page }}"
+      >
+      </app-paginator>
     </div>
   </div>
 </div>

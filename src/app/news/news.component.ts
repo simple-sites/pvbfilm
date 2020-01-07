@@ -12,9 +12,8 @@ export class NewsComponent implements OnInit {
   page = 1;
   total = 10;
   columns = 5;
-  news = [];
-
   hash = "#";
+  news = [];
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 

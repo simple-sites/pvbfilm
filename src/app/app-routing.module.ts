@@ -13,6 +13,7 @@ import { NewsItemComponent } from "./news-item/news-item.component";
 const routes: Routes = [
   { path: "intro", component: IntroComponent },
   { path: "product", component: ProductComponent },
+  { path: "product/page/:page", component: ProductComponent },
   { path: "certificate", component: CertificateComponent },
   { path: "factory", component: FactoryComponent },
   { path: "news", component: NewsComponent },
