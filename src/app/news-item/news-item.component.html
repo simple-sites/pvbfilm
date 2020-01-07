@@ -1,11 +1,26 @@
 <div class="container">
+  <h1 class="border-left"><a name="info"></a>{{ "NAV-NEWS" | translate }}</h1>
+  <div class="row info">
+    <div class="col-12"></div>
+  </div>
+</div>
+
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Library</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Data</li>
+          <li class="breadcrumb-item">
+            <a href="{{ hash }}/">{{ "NAV-HOME" | translate }}</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{{ hash }}/news/page/{{ page }}">{{
+              "NAV-NEWS" | translate
+            }}</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            {{ "NAV-NEWS-ITEM" | translate }}
+          </li>
         </ol>
       </nav>
     </div>
@@ -15,11 +30,22 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="media">
-        <div class="media-body">
-          <h5 class="mt-0">{{ item.title }} <sub>作者: {{item.author}} </sub></h5>
-          {{ item.content }}
-        </div>
+      <h2 class="text-center">
+        {{ item.title }}
+      </h2>
+    </div>
+    <div class="col-md-4 text-center">
+      发布时间：<span>{{ item.date }}</span>
+    </div>
+    <div class="col-md-4 text-center">
+      浏览次数：<span>{{ item.visited }}</span>
+    </div>
+    <div class="col-md-4 text-center">
+      作者：<span>{{ item.author }}</span>
+    </div>
+    <div class="col-md-12">
+      <div class="content">
+        {{ item.content }}
       </div>
     </div>
   </div>
