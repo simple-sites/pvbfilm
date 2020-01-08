@@ -1,18 +1,3 @@
-<!-- <div class="container">
-  <h1 class="border-left">
-    <a name="intro"></a>{{ "NAV-INTRO" | translate }}</h1>
-  <div class="row intro">
-    <div class="col">
-      <p>
-        <b>浙江瑞宏塑胶有限公司</b
-        >总部位于----浙江天台，注册资金1000万元，是一家专业生产PVB树脂粉到PVB玻璃中间膜的有限责任公司。公司成立就设两个生产基地，温州化工区为PVB树脂粉生产基地，天台为PVB中间膜生产基地。公司引进国外EDI公司和思恳德公司先进设备，具有全面的质量监控和自我检测系统。
-        公司现有员工520人，其中专业技术人员占18%。温州树脂粉生产基地具有成熟的PVB树脂生产工艺，年产能力12000吨；<br/>
-        天台PVB胶片生产基地拥有3条先进的PVB胶片生产线，生产车间全部为恒温、恒湿、无尘的净化车间，PVB中间膜年产能力10000吨，并具备生产3.3米宽及1.52MM厚的各种规格PVB胶片的能力。(点击查看全文)
-      </p>
-    </div>
-  </div>
-</div> -->
-
 <div class="container">
   <h1 class="border-left">
     <a name="news"></a>{{ "NAV-NEWS" | translate }}
@@ -23,7 +8,9 @@
         <tr *ngFor="let item of news; let i = index">
           <th scope="row"></th>
           <td class="text-left">
-            <a href="{{ item.url }}">{{ item.title }}</a>
+            <a href="{{ hash }}/news/item/{{ item.id }}/{{ page }}">{{
+              item.title
+            }}</a>
           </td>
           <td class="text-right">{{ item.date }}</td>
         </tr>

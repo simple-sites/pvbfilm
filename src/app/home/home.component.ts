@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   news = [];
   newsUrl = "assets/api/news.json";
   productUrl = "assets/api/product.json";
+  hash = "#";
+  page = 1;
 
   constructor(private http: HttpClient) { }
 
