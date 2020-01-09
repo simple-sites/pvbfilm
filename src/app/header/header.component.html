@@ -25,6 +25,7 @@
             >{{ "NAV-FRONTPAGE" | translate }}</a
           >
           <a class="btn btn-link btn-sm text-muted"
+          (click)="addCurrent()"
             >
             <fa-icon [icon]="faBookmark"></fa-icon
             >{{ "NAV-FAVORITE" | translate }}</a
