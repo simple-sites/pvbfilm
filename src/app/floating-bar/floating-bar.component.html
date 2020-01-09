@@ -1,6 +1,6 @@
 <div class="tools d-none d-sm-block">
   <div class="btn-group-vertical">
-    <!-- <a
+    <a
       type="button"
       class="btn btn-outline-secondary "
       data-toggle="tooltip"
@@ -8,51 +8,18 @@
       data-html="true"
       data-title="{{ item.tip }}"
       *ngFor="let item of tools"
-      #icon="item.icon"
     >
       <fa-icon
         title="{{ item.title }}"
-        class="text-success"
-        [icon]="icon"
-        *ngIf="{{item.icon}}"
+        [ngClass]="item.class"
+        [icon]="item.icon"
+        *ngIf="item.icon"
       ></fa-icon>
       <img
         src="{{ item.image }}"
         title="{{ item.title }}"
-        *ngIf="{{item.icon}}"
+        *ngIf="item.image"
       />
-    </a> -->
-
-    <a
-      type="button"
-      class="btn btn-outline-secondary "
-      title="微信聊天"
-      data-toggle="tooltip"
-      data-placement="left"
-      data-html="true"
-      title="{{ tip }}"
-    >
-      <fa-icon class="text-success" [icon]="faWeixin"></fa-icon>
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="QQ聊天">
-      <fa-icon class="text-primary" [icon]="faQq"></fa-icon>
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="微博关注">
-      <fa-icon class="text-danger" [icon]="faWeibo"></fa-icon>
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="电话直拔">
-      <fa-icon class="text-info" [icon]="faPhone"></fa-icon>
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="传真资料">
-      <fa-icon class="text-primary" [icon]="faFax"></fa-icon>
-    </a>
-    <a
-      type="button"
-      class="btn btn-outline-secondary "
-      title="天眼查"
-      href="{{ tianyancha }}"
-    >
-      <img src="{{ tainyanchaIcon }}" />
     </a>
   </div>
 </div>

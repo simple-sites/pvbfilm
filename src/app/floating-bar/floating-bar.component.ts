@@ -53,30 +53,28 @@ export class FloatingBarComponent implements AfterViewInit {
     {
       title: "QQ聊天",
       icon: faQq,
+      class: "text-primary",
       tip: "<img src=\"assets/images/social/weixin.jpg\" />",
       url: ""
     },
     {
       title: "微信聊天",
+      class: "text-success",
       icon: faWeixin,
       tip: "<img src=\"assets/images/social/weixin.jpg\" />",
       url: ""
     },
     {
       title: "微博关注",
+      class: "text-danger",
 
       icon: faWeibo,
       tip: "<img src=\"assets/images/social/weixin.jpg\" />",
       url: "",
     },
     {
-      title: "天眼查",
-
-      image: "assets/images/tianyancha.jpeg",
-      url: "https://www.tianyancha.com/company/1320234911"
-    },
-    {
       title: "电话直拔",
+      class: "text-second",
 
       icon: faPhone,
       tip: "+86 013582735228",
@@ -84,9 +82,17 @@ export class FloatingBarComponent implements AfterViewInit {
     },
     {
       title: "传真资料",
+      class: "text-warning",
+
       icon: faFax,
       tip: "+86 013582735228",
       url: "fax:+86 013582735228"
+    },
+    {
+      title: "天眼查",
+
+      image: "assets/images/tianyancha.jpeg",
+      url: "https://www.tianyancha.com/company/1320234911"
     }];
 
   tip = "<img src=\"assets/images/social/weixin.jpg\" />";
