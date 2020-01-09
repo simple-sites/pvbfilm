@@ -1,8 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"
-      ><img class="logo" src="{{ logo }}"/>
-      {{ "NAV-NAME" | translate }}</a
+      ><img class="logo" src="{{ logo }}" /> {{ "NAV-NAME" | translate }}</a
     >
     <button
       class="navbar-toggler"
@@ -19,15 +18,14 @@
       <ul class="navbar-nav mr-auto"></ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="btn btn-link btn-sm text-muted"
-          (click)="setCurrentHomePage()"
-            >
+          <a
+            class="btn btn-link btn-sm text-muted"
+            (click)="setCurrentHomePage()"
+          >
             <fa-icon [icon]="faHome"></fa-icon
             >{{ "NAV-FRONTPAGE" | translate }}</a
           >
-          <a class="btn btn-link btn-sm text-muted"
-          (click)="addCurrent()"
-            >
+          <a class="btn btn-link btn-sm text-muted" (click)="addCurrent()">
             <fa-icon [icon]="faBookmark"></fa-icon
             >{{ "NAV-FAVORITE" | translate }}</a
           >

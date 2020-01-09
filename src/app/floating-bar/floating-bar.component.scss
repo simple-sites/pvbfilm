@@ -13,3 +13,9 @@
   left: 20px;
   right: auto;
 }
+
+::ng-deep .tooltip-inner {
+  img {
+    width: 100%;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 declare var particlesJS: any;
 declare var $: any;
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
@@ -31,7 +31,7 @@ import { Router, NavigationStart } from "@angular/router";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   supportedLanguages = ["en", "zh"];
 
   faCloud = faCloud;
@@ -124,27 +124,27 @@ export class AppComponent implements OnInit {
     localStorage.setItem("locale", locale);
   }
 
-  ngOnInit() {
-    particlesJS.load("particles-js", "/assets/particles.json", function () {
+  ngAfterViewInit() {
+    particlesJS.load("particles-js", "/assets/particles.json", () => {
       console.log("callback - particles.js config loaded");
     });
     $(".carousel").carousel({
       interval: 10000
     });
     $(".selectpicker").selectpicker();
-    let locale = localStorage.getItem("locale");
-    console.log("locale = ", locale);
-    if (!locale) {
-      locale = this.getLocaleString();
-    }
-    this.setLocale(locale);
-
-    // this.titleService.setTitle(this.translate.get("TITLE 1"));
 
     $(".selectpicker").on("changed.bs.select", e => {
       console.log("change detected!");
       console.log(e.target.value);
       this.setLocale(e.target.value);
     });
+  }
+
+  ngOnInit() {
+    let locale = localStorage.getItem("locale");
+    if (!locale) {
+      locale = this.getLocaleString();
+    }
+    this.setLocale(locale);
   }
 }

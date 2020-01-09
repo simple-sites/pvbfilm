@@ -10,13 +10,15 @@ import {
   faPhone
 } from "@fortawesome/free-solid-svg-icons";
 
+declare var $: any;
+
 
 @Component({
   selector: "app-floating-bar",
   templateUrl: "./floating-bar.component.html",
   styleUrls: ["./floating-bar.component.scss"]
 })
-export class FloatingBarComponent implements OnInit {
+export class FloatingBarComponent implements AfterViewInit {
 
   faFax = faFax;
   faPhone = faPhone;
@@ -32,9 +34,17 @@ export class FloatingBarComponent implements OnInit {
   tainyanchaIcon = "assets/images/tianyancha.jpeg";
   tianyancha = "https://www.tianyancha.com/company/1320234911";
 
+  weixinTooltip = "<img class=\"weixin\" src=\"assets/images/social/weixin.jpg\" />";
   constructor() { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    console.log("inited");
+    $("[data-toggle=\"tooltip\"]").tooltip({
+      animated: "fade",
+      placement: "left",
+      html: true
+    }
+    );
   }
 
 }
