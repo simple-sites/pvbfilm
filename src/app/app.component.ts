@@ -126,7 +126,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     particlesJS.load("particles-js", "/assets/particles.json", () => {
-      console.log("callback - particles.js config loaded");
+      // console.log("callback - particles.js config loaded");
     });
     $(".carousel").carousel({
       interval: 10000

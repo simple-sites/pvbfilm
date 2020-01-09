@@ -52,12 +52,7 @@ export class HeaderComponent implements OnInit {
         try {
           win.triggerBookmark.attr("rel", "sidebar").attr("title", doc.title).attr("href", win.location.href);
         } catch (e2) {
-
           alert(this.favoriteCtrlD);
-
-          // alert("You can add this page to your bookmarks by pressing "
-          //   + (navigator.userAgent.toLowerCase().indexOf("mac") !== - 1 ?
-          //     "Command/Cmd" : "CTRL") + " + D on your keyboard.");
         }
       }
     }

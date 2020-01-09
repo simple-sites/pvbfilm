@@ -1,7 +1,36 @@
 <div class="tools d-none d-sm-block">
   <div class="btn-group-vertical">
-    <a type="button" class="btn btn-outline-secondary " title="微信聊天"
-    data-toggle="tooltip" data-placement="left" data-html="true" title="{{weixinTooltip}}"
+    <!-- <a
+      type="button"
+      class="btn btn-outline-secondary "
+      data-toggle="tooltip"
+      data-placement="left"
+      data-html="true"
+      data-title="{{ item.tip }}"
+      *ngFor="let item of tools"
+      #icon="item.icon"
+    >
+      <fa-icon
+        title="{{ item.title }}"
+        class="text-success"
+        [icon]="icon"
+        *ngIf="{{item.icon}}"
+      ></fa-icon>
+      <img
+        src="{{ item.image }}"
+        title="{{ item.title }}"
+        *ngIf="{{item.icon}}"
+      />
+    </a> -->
+
+    <a
+      type="button"
+      class="btn btn-outline-secondary "
+      title="微信聊天"
+      data-toggle="tooltip"
+      data-placement="left"
+      data-html="true"
+      title="{{ tip }}"
     >
       <fa-icon class="text-success" [icon]="faWeixin"></fa-icon>
     </a>
@@ -30,21 +59,15 @@
 
 <div class="store d-none d-sm-block">
   <div class="btn-group-vertical">
-    <a type="button" class="btn btn-outline-secondary " title="阿里巴巴">
-      <img src="{{ alibabaIcon }}" />
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="天猫商城">
-      <img src="{{ tianmaoIcon }}" />
-    </a>
-    <a type="button" class="btn btn-outline-secondary" title="淘宝商城">
-      <img src="{{ taobaoIcon }}" />
-    </a>
-    <!-- <a type="button" class="btn btn-outline-secondary" title="电话直拔"
-      >
-      <img src="{{ebayIcon}}"/>
-    </a> -->
-    <a type="button" class="btn btn-outline-secondary" title="传真资料">
-      <img src="{{ amazonIcon }}" />
+    <a
+      type="button"
+      class="btn btn-outline-secondary "
+      *ngFor="let item of shops"
+      href="{{ item.url }}"
+      target="_blank"
+      title="{{ item.name }}"
+    >
+      <img src="{{ item.icon }}" />
     </a>
   </div>
 </div>
