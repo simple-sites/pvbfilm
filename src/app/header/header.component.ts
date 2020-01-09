@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import {
   faHome,
   faBookmark,
@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   faHome = faHome;
   faBookmark = faBookmark;
   favoriteCtrlD = "";
+  homeSetAlert = "";
 
   mac = false;
 
@@ -24,14 +25,18 @@ export class HeaderComponent implements OnInit {
     this.mac = navigator.userAgent.toLowerCase().indexOf("mac") !== - 1;
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       if (this.mac) {
-      translate.get("FAVORITE-CTRL-D-MAC").subscribe((res: string) => {
-        this.favoriteCtrlD = res;
+        translate.get("FAVORITE-CTRL-D-MAC").subscribe((res: string) => {
+          this.favoriteCtrlD = res;
+        });
+      } else {
+        translate.get("FAVORITE-CTRL-D").subscribe((res: string) => {
+          this.favoriteCtrlD = res;
+        });
+      }
+
+      translate.get("HOME-SET-ALERT").subscribe((res: string) => {
+        this.homeSetAlert = res;
       });
-    } else {
-      translate.get("FAVORITE-CTRL-D").subscribe((res: string) => {
-        this.favoriteCtrlD = res;
-      });
-    }
     });
   }
   ngOnInit() {
@@ -65,4 +70,29 @@ export class HeaderComponent implements OnInit {
     this.addToFavorite(window, document);
   }
 
+  setHomepage(url: string, doc: any, win: any) {
+    if (doc.all) {
+      doc.body.style.behavior = "url(#default#homepage)";
+      doc.body.setHomePage(url);
+
+    } else if (win.sidebar) {
+      if (win.netscape) {
+        try {
+          win.netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+        } catch (e) {
+          alert(this.homeSetAlert);
+        }
+      }
+      try {
+        const prefs = win.Components.classes["@mozilla.org/preferences-service;1"].getService(win.Components.interfaces.nsIPrefBranch);
+        prefs.setCharPref("browser.startup.homepage", url);
+      } catch (e) {
+
+      }
+    }
+  }
+
+  setCurrentHomePage() {
+    this.setHomepage(location.href, document, window);
+  }
 }
