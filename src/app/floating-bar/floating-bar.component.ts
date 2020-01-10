@@ -1,4 +1,6 @@
 import { Component, AfterViewInit } from "@angular/core";
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import {
   faWeixin,
@@ -7,7 +9,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faFax,
-  faPhone
+  faPhone,
+  fas
 } from "@fortawesome/free-solid-svg-icons";
 
 declare var $: any;
@@ -99,8 +102,10 @@ export class FloatingBarComponent implements AfterViewInit {
   tainyanchaIcon = "assets/images/tianyancha.jpeg";
   tianyancha = "https://www.tianyancha.com/company/1320234911";
 
-  constructor() {
-
+  constructor(
+    library: FaIconLibrary
+  ) {
+    library.addIconPacks(fas, fab);
   }
 
   ngAfterViewInit() {
