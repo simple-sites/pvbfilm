@@ -32,7 +32,9 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -96,7 +98,9 @@
               "src/styles.scss",
               "node_modules/flag-icon-css/sass/flag-icon.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
