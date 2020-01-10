@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
-declare var particlesJS: any;
-declare var $: any;
+
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 
 import { Title } from "@angular/platform-browser";
@@ -25,6 +24,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Router, NavigationStart } from "@angular/router";
+
+declare var particlesJS: any;
+declare var $: any;
 
 @Component({
   selector: "app-root",
