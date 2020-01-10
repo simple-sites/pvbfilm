@@ -5,7 +5,7 @@
       <ul class="navbar-nav mr-auto"></ul>
       <ul class="navbar-nav">
         <li class="nav-item" [ngClass]="{'active': url === 'home'}">
-          <a class="nav-link btn-lg" href=""
+          <a class="nav-link btn-lg" href="{{hash}}/"
             >{{ "NAV-HOME" | translate }}
             <span class="sr-only">(current)</span></a
           >
@@ -56,7 +56,7 @@
           <div class="col">
             <p>
               {{ intro.context }}
-              (<a href="{{ intro.url }}">点击查看全文</a>)
+              (<a href="{{ intro.url }}">{{ "INTRO-FULL" | translate }}</a>)
             </p>
           </div>
         </div>

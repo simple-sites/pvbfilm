@@ -15,6 +15,7 @@
   "NAV-FAVORITE": "添加收藏",
   "NAV-STORE": "在线商店",
   "NAV-FACTORY": "厂房车间",
+  "INTRO-FULL": "点击查看全文",
   "FAVORITE-CTRL-D": "请输入组合键[CTRL + D]添加当前页到你的书签/收藏中！",
   "FAVORITE-CTRL-D-MAC": "请输入组合键[Command/Cmd + D]添加当前页到你的书签/收藏中！",
   "HOME-SET-ALERT": "此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将[signed.applets.codebase_principal_support]设置为'true'",
