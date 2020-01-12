@@ -1,11 +1,24 @@
-import { Component, AfterViewInit } from "@angular/core";
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { HttpClient } from '@angular/common/http';
 
 import {
   faWeixin,
   faQq,
-  faWeibo
+  faWeibo,
+  faFacebook,
+  faTelegram,
+  faYoutube,
+  faTwitter,
+  faTwitch,
+  faAdobe,
+  faGoogle,
+  faGithub,
+  faAmazon,
+  faAlipay,
+  faAndroid,
+  faApple
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faFax,
@@ -21,7 +34,7 @@ declare var $: any;
   templateUrl: "./floating-bar.component.html",
   styleUrls: ["./floating-bar.component.scss"]
 })
-export class FloatingBarComponent implements AfterViewInit {
+export class FloatingBarComponent implements OnInit, AfterViewInit {
 
   faFax = faFax;
   faPhone = faPhone;
@@ -29,29 +42,7 @@ export class FloatingBarComponent implements AfterViewInit {
   faQq = faQq;
   faWeibo = faWeibo;
 
-  shops = [
-    {
-      name: "阿里巴巴",
-      icon: "assets/images/alibaba-512.png",
-      url: "https://www.alibaba.com"
-    },
-    {
-      name: "天猫商城",
-
-      icon: "assets/images/tianmao.png",
-      url: "https://www.tmall.com"
-    }, {
-      name: "淘宝商城",
-
-      icon: "assets/images/taobao.jpg",
-      url: "https://www.taobao.com"
-    }, {
-      name: "亚马逊",
-      icon: "assets/images/amazon.png",
-      url: "https://www.amazon.com"
-    }
-  ];
-
+  stores;
   tools = [
     {
       title: "QQ聊天",
@@ -102,8 +93,13 @@ export class FloatingBarComponent implements AfterViewInit {
   tainyanchaIcon = "assets/images/tianyancha.jpeg";
   tianyancha = "https://www.tianyancha.com/company/1320234911";
 
+
+  url = "assets/api/stores.json";
+
+
   constructor(
-    library: FaIconLibrary
+    private http: HttpClient,
+    private library: FaIconLibrary
   ) {
     library.addIconPacks(fas, fab);
   }
@@ -117,5 +113,13 @@ export class FloatingBarComponent implements AfterViewInit {
     }
     );
   }
+
+  ngOnInit() {
+    this.http.get(this.url).subscribe((data: any) => {
+      this.stores = data;
+    });
+  }
+
+  
 
 }

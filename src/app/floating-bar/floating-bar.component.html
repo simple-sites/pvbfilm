@@ -29,12 +29,12 @@
     <a
       type="button"
       class="btn btn-outline-secondary "
-      *ngFor="let item of shops"
-      href="{{ item.url }}"
+      *ngFor="let store of stores"
+      href="{{ store.url }}"
       target="_blank"
-      title="{{ item.name }}"
+      title="{{ store.name }}"
     >
-      <img src="{{ item.icon }}" />
+      <img src="{{ store.icon }}" />
     </a>
   </div>
 </div>
