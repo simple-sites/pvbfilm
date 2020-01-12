@@ -2,17 +2,17 @@
   <div class="btn-group-vertical">
     <a
       type="button"
-      class="btn btn-outline-secondary "
+      class="btn btn-outline-secondary social"
       data-toggle="tooltip"
       data-placement="left"
       data-html="true"
       data-title="{{ item.tip }}"
-      *ngFor="let item of tools"
+      *ngFor="let item of socials"
     >
       <fa-icon
         title="{{ item.title }}"
         [ngClass]="item.class"
-        [icon]="item.icon"
+        [icon]=item.icon
         *ngIf="item.icon"
       ></fa-icon>
       <img
