@@ -1,28 +1,28 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
+import { ConfigService } from '../config.service';
 @Component({
   selector: "app-news",
   templateUrl: "./news.component.html",
   styleUrls: ["./news.component.scss"]
 })
 export class NewsComponent implements OnInit {
-  url = "assets/api/news.json";
+  url = "assets/api/news";
 
   page = 1;
   total = 10;
   columns = 5;
-  hash = "#";
+  // hash = "#";
   news = [];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private config: ConfigService) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
       const page = parseInt(param.get("page"), 10);
       this.page = page > 1 ? page : 1;
 
-      this.http.get(this.url).subscribe((data: any) => {
+      this.config.request(this.url, (data: any) => {
         this.total = data.total;
         this.news = data.news;
       });

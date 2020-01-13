@@ -1,13 +1,12 @@
 import {
   Component,
-  AfterViewInit,
   OnInit,
   AfterViewChecked
 } from "@angular/core";
 import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { HttpClient } from "@angular/common/http";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import { ConfigService } from '../config.service';
 
 declare var $: any;
 
@@ -19,20 +18,18 @@ declare var $: any;
 export class FloatingBarComponent implements OnInit, AfterViewChecked {
   stores;
   socials;
-  url = "assets/api/stores.json";
-  urlSocials = "assets/api/socials.json";
+  urlStore = "assets/api/store";
+  urlSocials = "assets/api/social";
 
-  constructor(private http: HttpClient, private library: FaIconLibrary) {
+  constructor(private config: ConfigService, private library: FaIconLibrary) {
     library.addIconPacks(fas, fab);
   }
 
   ngAfterViewChecked() {
-    console.log("inited");
     this.tooltip();
   }
 
   tooltip() {
-    console.log("tooltip");
     $('[data-toggle="tooltip"]').tooltip({
       animated: "fade",
       placement: "left",
@@ -41,11 +38,11 @@ export class FloatingBarComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((data: any) => {
+    this.config.request(this.urlStore, (data: any) => {
       this.stores = data;
     });
 
-    this.http.get(this.urlSocials).subscribe((data: any) => {
+    this.config.request(this.urlSocials, (data: any) => {
       this.socials = data;
     });
   }

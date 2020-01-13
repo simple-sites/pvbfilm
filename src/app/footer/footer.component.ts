@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { ConfigService } from '../config.service';
 import {
   faMapMarker,
   faFax,
@@ -21,14 +21,14 @@ export class FooterComponent implements OnInit {
   company;
 
   constructor(
-    private http: HttpClient
+    private config: ConfigService
   ) { }
 
   ngOnInit() {
-    this.http.get("assets/api/beian.json").subscribe((data) => {
+    this.config.request("assets/api/beian", (data) => {
       this.beian = data;
     });
-    this.http.get("assets/api/contact.json").subscribe((data) => {
+    this.config.request("assets/api/contact", (data) => {
       this.company = data;
     });
   }

@@ -14,7 +14,7 @@ export class NewsItemComponent implements OnInit {
   hash = "#";
   page = 1;
 
-  url = "assets/api/item.json";
+  url = "assets/api/item";
 
 
   constructor(private route: ActivatedRoute, private http: HttpClient) { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: "app-contact",
@@ -7,15 +7,15 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./contact.component.scss"]
 })
 export class ContactComponent implements OnInit {
-  url = "assets/api/contact.json";
+  url = "assets/api/contact";
   contact;
 
   constructor(
-    private http: HttpClient
+    private config: ConfigService
   ) { }
 
   ngOnInit() {
-    this.http.get(this.url).subscribe((data) => {
+    this.config.request(this.url, (data) => {
       this.contact = data;
     });
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: "app-home",
@@ -9,19 +9,19 @@ import { HttpClient } from "@angular/common/http";
 export class HomeComponent implements OnInit {
   products = [];
   news = [];
-  newsUrl = "assets/api/news.json";
-  productUrl = "assets/api/product.json";
+  newsUrl = "assets/api/news";
+  productUrl = "assets/api/product";
   hash = "#";
   page = 1;
 
-  constructor(private http: HttpClient) { }
+  constructor(private config: ConfigService) { }
 
   ngOnInit() {
-    this.http.get(this.newsUrl).subscribe((data: any) => {
+    this.config.request(this.newsUrl, (data: any) => {
       this.news = data.news;
     });
 
-    this.http.get(this.productUrl).subscribe((data: any) => {
+    this.config.request(this.productUrl, (data: any) => {
       this.products = data.products;
     });
   }

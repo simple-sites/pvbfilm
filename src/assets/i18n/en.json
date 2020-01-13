@@ -15,7 +15,7 @@
   "NAV-FAVORITE": "Add to Favorites",
   "NAV-STORE": "Online Stores",
   "NAV-FACTORY": "Factory",
-  "INTRO-FULL": "Click to View full Intro",
+  "INTRO-FULL": "More...",
   "FAVORITE-CTRL-D": "You can add this page to your bookmarks by pressing [CTRL + D] on your keyboard.",
   "FAVORITE-CTRL-D-MAC": "You can add this page to your bookmarks by pressing [Command/Cmd + D] on your keyboard.",
   "HOME-SET-ALERT": "Operation denied!\nPlease browse to 'about:config' and set [signed.applets.codebase_principal_support] to 'true'",
@@ -49,5 +49,6 @@
   "ADMIN-ENTRANCE": "Adminitration",
   "TECH-SUPPORT": "Technical Support by : ",
   "TECH-SUPPORTER": "Zhejiang Tianyikuai Co., Ltd.",
-  "STATISTICS": "Statistics : "
+  "STATISTICS": "Statistics : ",
+  "BUY": "Buy"
 }

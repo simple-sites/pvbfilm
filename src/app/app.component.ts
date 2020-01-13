@@ -5,6 +5,7 @@ import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import { Title } from "@angular/platform-browser";
 import { Router, NavigationStart } from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { ConfigService } from './config.service';
 
 declare var particlesJS: any;
 declare var $: any;
@@ -23,13 +24,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   name = "NAV-NAME";
   intro;
   url = "home";
-  hash = "#";
-
   constructor(
     private translate: TranslateService,
     private titleService: Title,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    public config: ConfigService
   ) {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       translate.get("TITLE").subscribe((res: string) => {
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       });
     });
     router.events.subscribe(event => {
-      console.log(event);
+      // console.log(event);
       if (event instanceof NavigationStart) {
         let tab = event.url.substr(1);
         tab = tab.split("/")[0];
@@ -65,6 +65,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     $("select").val(locale);
     $(".selectpicker").selectpicker("refresh");
     localStorage.setItem("locale", locale);
+    this.config.language = locale;
   }
 
   ngAfterViewInit() {
@@ -88,7 +89,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       locale = this.getLocaleString();
     }
     this.setLocale(locale);
-    this.http.get("assets/api/intro.json").subscribe((data) => {
+    this.config.request("assets/api/intro", (data) => {
       this.intro = data;
     });
   }

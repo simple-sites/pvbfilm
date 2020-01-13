@@ -1,80 +1,17 @@
 <div class="container">
-  <h1 class="border-left">
-    <a name="info"></a>{{ "NAV-INFO" | translate }}</h1>
+  <h1 class="border-left"><a name="info"></a>{{ "NAV-INFO" | translate }}</h1>
   <div class="row info">
     <div class="col-12">
-      <table class="table table-borderless">
-        <caption>浙江金亿龙泵业有限公司</caption>
+      <table class="table table-borderless" *ngIf="intro">
+        <caption>
+          {{
+            intro.company
+          }}
+        </caption>
         <tbody>
-          <tr>
-            <th scope="row">企业法人：</th>
-            <td>潘华志</td>
-          </tr>
-          <tr>
-            <th scope="row">所在地：</th>
-            <td>浙江 台州</td>
-          </tr>
-          <tr>
-            <th scope="row">企业类型：</th>
-            <td>私营股份有限公司</td>
-          </tr>
-          <tr>
-            <th scope="row">成立时间：</th>
-            <td>2001-05-08</td>
-          </tr>
-          <tr>
-            <th scope="row">主营行业：</th>
-            <td>排污泵</td>
-          </tr>
-          <tr>
-            <th scope="row">主营产品：</th>
-            <td>    潜水排污泵,管道泵,增压泵,喷射泵
-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <h1 class="border-left">
-    <a name="info"></a>{{ "NAV-DETAILS" | translate }}</h1>
-  <div class="row info">
-    <div class="col-12">
-      <table class="table table-borderless">
-        <tbody>
-          <tr>
-            <th scope="row">主营地区：</th>
-            <td>浙江 台州</td>
-          </tr>
-          <tr>
-            <th scope="row">经营模式：</th>
-            <td>生产+贸易型</td>
-          </tr>
-          <tr>
-            <th scope="row">经营期限：</th>
-            <td>长期</td>
-          </tr>
-          <tr>
-            <th scope="row">客户群体：</th>
-            <td>所有人群</td>
-          </tr>
-          <tr>
-            <th scope="row">经营范围：</th>
-            <td>潜水排污泵,管道泵,增压泵,喷射泵</td>
-          </tr>
-          <tr>
-            <th scope="row">公司邮编：</th>
-            <td>318000</td>
-          </tr>
-          <tr>
-            <th scope="row">行政区域：</th>
-            <td>浙江台州</td>
-          </tr>
-          <tr>
-            <th scope="row">公司地址：</th>
-            <td>公司地址温岭市大溪镇沈岙村</td>
+          <tr *ngFor="let item of intro.items; let i = index">
+            <th scope="row">{{ item.key }}</th>
+            <td>{{ item.value }}</td>
           </tr>
         </tbody>
       </table>

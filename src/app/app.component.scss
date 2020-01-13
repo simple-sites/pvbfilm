@@ -58,22 +58,6 @@ h1 {
   }
 }
 
-.vigcoin {
-  background-color: #dc3545;
-  background-image: url("../assets/images/vigcoin.png");
-  padding-bottom: 20px;
-  opacity: 0.9;
-  h1 {
-    padding-top: 20px;
-    text-align: center;
-    color: white;
-  }
-  p {
-    padding-left: 20px;
-    color: #ccc;
-  }
-}
-
 .production-item {
   h1 {
     text-align: center;
@@ -103,51 +87,5 @@ h1 {
       position: relative;
 
     }
-  }
-}
-
-.wallet {
-  text-align: center;
-  color: #16b75c;
-  .icon {
-    font-size: 64px;
-    color: #999;
-  }
-  a {
-    font-size: 32px;
-  }
-}
-
-.mining,
-.development,
-.code {
-  h3 {
-    font-size: 36px;
-    text-align: center;
-    color: #dc3545;
-  }
-  img {
-    width: 100%;
-  }
-  p {
-    text-align: left;
-    font-size: 32px;
-    padding-left: 20px;
-    color: #ccc;
-  }
-}
-
-.development {
-  p {
-    text-align: right;
-    font-size: 32px;
-    padding-right: 20px;
-  }
-}
-
-.contact {
-  text-align: center;
-  img {
-    width: 80%;
   }
 }

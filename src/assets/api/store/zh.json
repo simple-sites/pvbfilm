@@ -6,13 +6,11 @@
   },
   {
     "name": "天猫商城",
-
     "icon": "assets/images/tianmao.png",
     "url": "https://www.tmall.com"
   },
   {
     "name": "淘宝商城",
-
     "icon": "assets/images/taobao.jpg",
     "url": "https://www.taobao.com"
   },

@@ -3,14 +3,14 @@
     "title": "QQ聊天",
     "icon": ["fab", "qq"],
     "class": "text-primary",
-    "tip": "<img src=\"assets/images/social/weixin.jpg\" />",
+    "tip": "<img src=\"assets/vendor/social/weixin.jpg\" />",
     "url": ""
   },
   {
     "title": "微信聊天",
     "class": "text-success",
     "icon": ["fab", "weixin"],
-    "tip": "<img src=\"assets/images/social/weixin.jpg\" />",
+    "tip": "<img src=\"assets/vendor/social/weixin.jpg\" />",
     "url": ""
   },
   {
@@ -18,7 +18,7 @@
     "class": "text-info",
 
     "icon": ["fab", "twitter"],
-    "tip": "<img src=\"assets/images/social/weixin.jpg\" />",
+    "tip": "<img src=\"assets/vendor/social/weixin.jpg\" />",
     "url": ""
   },
   {
@@ -26,7 +26,7 @@
     "class": "text-danger",
 
     "icon": ["fab", "weibo"],
-    "tip": "<img src=\"assets/images/social/weixin.jpg\" />",
+    "tip": "<img src=\"assets/vendor/social/weixin.jpg\" />",
     "url": ""
   },
   {
@@ -34,7 +34,7 @@
     "class": "text-primary",
 
     "icon": ["fab", "facebook"],
-    "tip": "<img src=\"assets/images/social/weixin.jpg\" />",
+    "tip": "<img src=\"assets/vendor/social/weixin.jpg\" />",
     "url": ""
   },
   {

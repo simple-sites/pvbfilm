@@ -7,7 +7,7 @@
           <tr *ngFor="let item of news; let i = index">
             <th scope="row"></th>
             <td class="text-left">
-              <a href="{{ hash }}/news/item/{{ item.id }}/{{ page }}">{{
+              <a href="{{ config.hash }}/news/item/{{ item.id }}/{{ page }}">{{
                 item.title
               }}</a>
             </td>
@@ -17,11 +17,11 @@
       </table>
       <app-paginator
         url="/news/page/"
-        hash="{{ hash }}"
+        hash="{{ config.hash }}"
         total="{{ total }}"
         columns="{{ columns }}"
         page="{{ page }}"
-        *ngIf = "total > 1"
+        *ngIf="total > 1"
       >
       </app-paginator>
     </div>

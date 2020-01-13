@@ -17,10 +17,11 @@ import { HeaderComponent } from './header/header.component';
 import { IntroComponent } from './intro/intro.component';
 import { NewsComponent } from './news/news.component';
 import { ProductComponent } from './product/product.component';
-import { StoreComponent } from './store/store.component';
 import { FactoryComponent } from './factory/factory.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+
+import { ConfigService } from './config.service';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,7 +39,6 @@ export function createTranslateLoader(http: HttpClient) {
     IntroComponent,
     NewsComponent,
     ProductComponent,
-    StoreComponent,
     FactoryComponent,
     NewsItemComponent,
     PaginatorComponent
@@ -56,7 +56,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

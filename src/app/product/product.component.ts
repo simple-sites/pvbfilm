@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: "app-product",
@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./product.component.scss"]
 })
 export class ProductComponent implements OnInit {
-  url = "assets/api/product.json";
+  url = "assets/api/product";
 
   page = 1;
   total = 10;
@@ -18,14 +18,14 @@ export class ProductComponent implements OnInit {
   products = [
   ];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private config: ConfigService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
       const page = parseInt(param.get("page"), 10);
       this.page = page > 1 ? page : 1;
 
-      this.http.get(this.url).subscribe((data: any) => {
+      this.config.request(this.url, (data: any) => {
         this.total = data.total;
         this.products = data.products;
       });
