@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row about" *ngIf="company">
     <div class="col-12">
-      <p>2006-2013 {{ "COPYRIGHTS" | translate }} &copy; {{ company.name }} &trade;</p>
+      <p>
+        2006-2013 {{ "COPYRIGHTS" | translate }} &copy;
+        {{ company.name }} &trade;
+      </p>
     </div>
     <div class="col-md-6 col-sm-12 text-left">
       <p>
@@ -18,9 +21,13 @@
     </div>
     <div class="col-md-6 col-sm-12">
       <p class="text-left">
-        <a href="/admin">网站管理</a><br />
-        技术支持：<a href="https://t1bao.com">田一块网络科技有限公司</a><br />
-        浏览统计：<a href="aaa"><img src="assets/images/cnzz.gif"/></a>
+        <a href="/admin">{{ "ADMIN-ENTRANCE" | translate }}</a
+        ><br />
+        {{ "TECH-SUPPORT" | translate
+        }}<a href="https://t1bao.com">{{ "TECH-SUPPORTER" | translate }}</a
+        ><br />
+        {{ "STATISTICS" | translate
+        }}<a href="aaa"><img src="assets/images/cnzz.gif"/></a>
       </p>
     </div>
   </div>
