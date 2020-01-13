@@ -7,7 +7,7 @@
       </p>
     </div>
     <div class="col-12">
-      <table class="table table-borderless" *ngIf="intro">
+      <table class="table table-borderless d-none d-sm-block" *ngIf="intro">
         <caption>
           {{
             intro.company
@@ -20,6 +20,18 @@
           </tr>
         </tbody>
       </table>
+
+      <ul class="d-block d-sm-none" *ngIf="intro">
+        <li>
+          {{ intro.company }}
+        </li>
+        <li *ngFor="let item of intro.items; let i = index">
+          <ul>
+            <li scope="row">{{ item.key }}</li>
+            <li>{{ item.value }}</li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
