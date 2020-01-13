@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 @Component({
   selector: "app-news",
   templateUrl: "./news.component.html",
@@ -12,10 +13,17 @@ export class NewsComponent implements OnInit {
   page = 1;
   total = 10;
   columns = 5;
-  // hash = "#";
   news = [];
 
-  constructor(private route: ActivatedRoute, private config: ConfigService) {}
+  constructor(private route: ActivatedRoute, private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.config.request(this.url, (data: any) => {
+        this.total = data.total;
+        this.news = data.news;
+      });
+    });
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-certificate",
@@ -16,7 +17,15 @@ export class CertificateComponent implements OnInit {
   total = 10;
   columns = 5;
 
-  constructor(private route: ActivatedRoute, private config: ConfigService) { }
+  constructor(private route: ActivatedRoute, private config: ConfigService,
+    translate: TranslateService) { 
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.config.request(this.url, (data: any) => {
+        this.total = data.total;
+        this.certificates = data.certificates;
+      });
+    });
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {

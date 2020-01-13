@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-home",
@@ -11,10 +12,15 @@ export class HomeComponent implements OnInit {
   news = [];
   newsUrl = "assets/api/news";
   productUrl = "assets/api/product";
-  hash = "#";
+  // hash = "#";
   page = 1;
 
-  constructor(private config: ConfigService) { }
+  constructor(private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.ngOnInit();
+    });
+  }
 
   ngOnInit() {
     this.config.request(this.newsUrl, (data: any) => {

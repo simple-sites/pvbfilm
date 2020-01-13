@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { HttpClient } from '@angular/common/http';
+import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-news-item",
@@ -11,21 +13,28 @@ export class NewsItemComponent implements OnInit {
   id = "";
   item;
 
-  hash = "#";
+  // hash = "#";
   page = 1;
 
   url = "assets/api/item";
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.config.request(this.url, (data: any) => {
+        this.item = data;
+      }, { id: this.id });
+    });
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
       this.page = parseInt(param.get("page"), 10);
       this.id = param.get("id");
-      this.http.get(this.url + "?id=" + this.id).subscribe((data: any) => {
+      this.config.request(this.url, (data: any) => {
         this.item = data;
-      });
+      }, { id: this.id });
     });
   }
 

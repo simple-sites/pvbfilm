@@ -26,6 +26,6 @@
   },
   "map": {
     "key": "地  图：",
-    "value": "assets/images/map.png"
+    "value": "assets/vendor/map.png"
   }
 }

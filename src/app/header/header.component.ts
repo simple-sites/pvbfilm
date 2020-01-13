@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
+import { ConfigService } from '../config.service';
 import {
   faHome,
   faBookmark,
@@ -11,19 +12,23 @@ import {
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  logo = "assets/images/logo.png";
+  // logo = "assets/images/logo.png";
   faHome = faHome;
   faBookmark = faBookmark;
   favoriteCtrlD = "";
   homeSetAlert = "";
 
   mac = false;
-
+  
+  url = "assets/api/intro";
+  intro;
   constructor(
+    private config: ConfigService,
     private translate: TranslateService
-  ) {
+      ) {
     this.mac = navigator.userAgent.toLowerCase().indexOf("mac") !== - 1;
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.ngOnInit();
       if (this.mac) {
         translate.get("FAVORITE-CTRL-D-MAC").subscribe((res: string) => {
           this.favoriteCtrlD = res;
@@ -39,7 +44,11 @@ export class HeaderComponent implements OnInit {
       });
     });
   }
+
   ngOnInit() {
+    this.config.request(this.url, (data: any) => {
+      this.intro = data;
+    });
   }
 
   addToFavorite(win: any, doc: any) {

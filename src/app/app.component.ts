@@ -35,6 +35,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       translate.get("TITLE").subscribe((res: string) => {
         titleService.setTitle(res);
       });
+      this.config.request("assets/api/intro", (data) => {
+        this.intro = data;
+      });
     });
     router.events.subscribe(event => {
       // console.log(event);
@@ -43,6 +46,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         tab = tab.split("/")[0];
         if (tab) {
           this.url = tab;
+        } else {
+          this.url = "home";
         }
       }
     });
@@ -60,12 +65,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   setLocale(locale: string) {
+    this.config.language = locale;
     this.translate.setDefaultLang(locale);
     this.translate.use(locale);
     $("select").val(locale);
     $(".selectpicker").selectpicker("refresh");
     localStorage.setItem("locale", locale);
-    this.config.language = locale;
   }
 
   ngAfterViewInit() {

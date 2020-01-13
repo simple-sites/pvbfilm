@@ -1,6 +1,11 @@
 <div class="container">
   <h1 class="border-left"><a name="info"></a>{{ "NAV-INFO" | translate }}</h1>
   <div class="row info">
+    <div class="col-md-12">
+      <p class="content" *ngIf="intro">
+        {{ intro.content }}
+      </p>
+    </div>
     <div class="col-12">
       <table class="table table-borderless" *ngIf="intro">
         <caption>

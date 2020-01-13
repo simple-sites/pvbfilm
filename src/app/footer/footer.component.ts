@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import {
   faMapMarker,
   faFax,
@@ -21,8 +22,12 @@ export class FooterComponent implements OnInit {
   company;
 
   constructor(
-    private config: ConfigService
-  ) { }
+    private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.ngOnInit();
+    });
+  }
 
   ngOnInit() {
     this.config.request("assets/api/beian", (data) => {

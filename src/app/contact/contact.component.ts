@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-contact",
@@ -11,8 +12,14 @@ export class ContactComponent implements OnInit {
   contact;
 
   constructor(
-    private config: ConfigService
-  ) { }
+    private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.config.request(this.url, (data) => {
+        this.contact = data;
+      });
+    });
+  }
 
   ngOnInit() {
     this.config.request(this.url, (data) => {

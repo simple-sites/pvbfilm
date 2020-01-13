@@ -7,6 +7,7 @@ import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 declare var $: any;
 
@@ -21,8 +22,12 @@ export class FloatingBarComponent implements OnInit, AfterViewChecked {
   urlStore = "assets/api/store";
   urlSocials = "assets/api/social";
 
-  constructor(private config: ConfigService, private library: FaIconLibrary) {
+  constructor(private config: ConfigService, private library: FaIconLibrary,
+    translate: TranslateService) {
     library.addIconPacks(fas, fab);
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.ngOnInit();
+    });
   }
 
   ngAfterViewChecked() {

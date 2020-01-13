@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-factory",
@@ -8,24 +9,7 @@ import { ConfigService } from '../config.service';
   styleUrls: ["./factory.component.scss"]
 })
 export class FactoryComponent implements OnInit {
-  factories = [
-    {
-      url: "assets/images/f1.jpg",
-      title: "资质1",
-    },
-    {
-      url: "assets/images/f2.jpg",
-      title: "资质2",
-    },
-    {
-      url: "assets/images/f3.png",
-      title: "资质3",
-    },
-    {
-      url: "assets/images/f4.jpg",
-      title: "资质4",
-    }
-  ];
+  factories;
   url = "assets/api/factory";
 
   page = 1;
@@ -33,7 +17,15 @@ export class FactoryComponent implements OnInit {
   columns = 5;
   hash = "#";
 
-  constructor(private route: ActivatedRoute, private config: ConfigService) { }
+  constructor(private route: ActivatedRoute, private config: ConfigService,
+    translate: TranslateService) { 
+      translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        this.config.request(this.url, (data: any) => {
+          this.total = data.total;
+          this.factories = data.factories;
+        });
+      });
+    }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {

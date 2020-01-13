@@ -5,45 +5,45 @@
   "products": [
     {
       "image": "assets/vendor/roadmap/1.jpg",
-      "title": "PRODUCTS-T1",
-      "intro": "PRODUCTS-T1-INTRO",
-      "state": "PRODUCTS-STATE-DONE"
+      "title": "产品-T1",
+      "介绍": "产品-T1-介绍",
+      "state": "产品-STATE-DONE"
     },
     {
       "image": "assets/vendor/roadmap/2.jpg",
-      "title": "PRODUCTS-T2",
-      "intro": "PRODUCTS-T2-INTRO",
-      "state": "PRODUCTS-STATE-PROGRESSING"
+      "title": "产品-T2",
+      "介绍": "产品-T2-介绍",
+      "state": "产品-STATE-PROGRESSING"
     },
     {
       "image": "assets/vendor/roadmap/3.jpg",
-      "title": "PRODUCTS-T3",
-      "intro": "PRODUCTS-T3-INTRO",
-      "state": "PRODUCTS-STATE-PLANNED"
+      "title": "产品-T3",
+      "介绍": "产品-T3-介绍",
+      "state": "产品-STATE-PLANNED"
     },
     {
       "image": "assets/vendor/roadmap/4.jpg",
-      "title": "PRODUCTS-T4",
-      "intro": "PRODUCTS-T4-INTRO",
-      "state": "PRODUCTS-STATE-PLANNED"
+      "title": "产品-T4",
+      "介绍": "产品-T4-介绍",
+      "state": "产品-STATE-PLANNED"
     },
     {
       "image": "assets/vendor/roadmap/5.jpg",
-      "title": "PRODUCTS-T4",
-      "intro": "PRODUCTS-T4-INTRO",
-      "state": "PRODUCTS-STATE-PLANNED"
+      "title": "产品-T4",
+      "介绍": "产品-T4-介绍",
+      "state": "产品-STATE-PLANNED"
     },
     {
       "image": "assets/vendor/roadmap/5.jpg",
-      "title": "PRODUCTS-T4",
-      "intro": "PRODUCTS-T4-INTRO",
-      "state": "PRODUCTS-STATE-PLANNED"
+      "title": "产品-T4",
+      "介绍": "产品-T4-介绍",
+      "state": "产品-STATE-PLANNED"
     },
     {
       "image": "assets/vendor/roadmap/5.jpg",
-      "title": "PRODUCTS-T4",
-      "intro": "PRODUCTS-T4-INTRO",
-      "state": "PRODUCTS-STATE-PLANNED"
+      "title": "产品-T4",
+      "介绍": "产品-T4-介绍",
+      "state": "产品-STATE-PLANNED"
     }
   ]
 }

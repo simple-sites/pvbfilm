@@ -8,7 +8,7 @@ export class ConfigService {
   hash = "#";
   public language = "zh";
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   request(url, cb, params = undefined) {

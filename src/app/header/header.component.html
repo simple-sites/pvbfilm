@@ -1,7 +1,7 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"
-      ><img class="logo" src="{{ logo }}" /> {{ "NAV-NAME" | translate }}</a
+    <a class="navbar-brand" href="{{intro.url}}" *ngIf="intro"
+      ><img class="logo" src="{{ intro.logo }}"/> {{ "NAV-NAME" | translate }}</a
     >
     <button
       class="navbar-toggler"

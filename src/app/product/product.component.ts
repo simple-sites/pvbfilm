@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ConfigService } from '../config.service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: "app-product",
@@ -18,7 +19,15 @@ export class ProductComponent implements OnInit {
   products = [
   ];
 
-  constructor(private route: ActivatedRoute, private config: ConfigService) { }
+  constructor(private route: ActivatedRoute, private config: ConfigService,
+    translate: TranslateService) {
+    translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.config.request(this.url, (data: any) => {
+        this.total = data.total;
+        this.products = data.products;
+      });
+    });
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(param => {
