@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   name = "NAV-NAME";
   intro;
   url = "home";
+  samples;
   constructor(
     private translate: TranslateService,
     private titleService: Title,
@@ -48,6 +49,11 @@ export class AppComponent implements OnInit, AfterViewInit {
           this.url = tab;
         } else {
           this.url = "home";
+        }
+        if (this.url === "home") {
+          particlesJS.load("particles-js", "assets/particles.json", () => {
+            // console.log("callback - particles.js config loaded");
+          });
         }
       }
     });
@@ -74,12 +80,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    particlesJS.load("particles-js", "assets/particles.json", () => {
-      // console.log("callback - particles.js config loaded");
-    });
+    console.log(this.url);
+
     $(".carousel").carousel({
       interval: 10000
     });
+
     $(".selectpicker").selectpicker();
     $(".selectpicker").on("changed.bs.select", e => {
       console.log("change detected!");
@@ -96,6 +102,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.setLocale(locale);
     this.config.request("assets/api/intro", (data) => {
       this.intro = data;
+    });
+
+    this.config.request("assets/api/product", (data: any) => {
+      this.samples = data.products;
     });
   }
 }

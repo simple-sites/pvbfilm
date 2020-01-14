@@ -22,6 +22,8 @@ import { NewsItemComponent } from './news-item/news-item.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 
 import { ConfigService } from './config.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,7 +56,8 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row about" *ngIf="company">
+  <div class="row footer" *ngIf="company">
     <div class="col-12">
       <p>
         2006-2013 {{ "COPYRIGHTS" | translate }} &copy;
@@ -8,15 +8,18 @@
     </div>
     <div class="col-md-6 col-sm-12 text-left">
       <p>
-        <fa-icon [icon]="faMapMarker"></fa-icon>
-        <span>{{ company.address.key }}</span
-        >{{ company.address.value }}<br />
-        <fa-icon [icon]="faPhone"></fa-icon>
-        <span>{{ company.phone.key }}</span
-        >{{ company.phone.value }}<br />
-        <fa-icon [icon]="faFax"></fa-icon>
-        <span>{{ company.fax.key }}</span
-        >{{ company.fax.value }}<br />
+        <span
+          ><fa-icon [icon]="faMapMarker"></fa-icon
+          >{{ company.address.key }}</span
+        >{{ company.address.value }}
+      </p>
+      <p>
+        <span><fa-icon [icon]="faPhone"></fa-icon>{{ company.phone.key }}</span
+        >{{ company.phone.value }}
+      </p>
+      <p>
+        <span><fa-icon [icon]="faFax"></fa-icon>{{ company.fax.key }}</span
+        >{{ company.fax.value }}
       </p>
     </div>
     <div class="col-md-6 col-sm-12">

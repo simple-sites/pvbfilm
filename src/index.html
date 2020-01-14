@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>{{ 'TITLE' | translate }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{logo}}" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{logo}}" type="image/x-icon" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
   </head>
 
   <body>
-    <app-root>Loading(加载中)....</app-root>
+    <app-root>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
   </body>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140048281-1"></script>
+  <script
+    async=""
+    src="https://www.googletagmanager.com/gtag/js?id=UA-140048281-1"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
-    gtag('js', new Date());
+    gtag("js", new Date());
 
-    gtag('config', 'UA-140048281-1');
+    gtag("config", "UA-140048281-1");
   </script>
-
 </html>
