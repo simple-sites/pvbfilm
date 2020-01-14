@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "vigcoin": {
+    "qiyebao": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -73,11 +73,11 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "vigcoin:build"
+            "browserTarget": "qiyebao:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "vigcoin:build:production"
+              "browserTarget": "qiyebao:build:production"
             },
             "ci": {
               "progress": false
@@ -121,7 +121,7 @@
         }
       }
     },
-    "vigcoin-e2e": {
+    "qiyebao-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -148,5 +148,5 @@
       }
     }
   },
-  "defaultProject": "vigcoin"
+  "defaultProject": "qiyebao"
 }
