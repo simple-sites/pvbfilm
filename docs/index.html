@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>{{ 'TITLE' | translate }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{logo}}" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{{logo}}" type="image/x-icon" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
   <link rel="stylesheet" href="styles.446062b2ae530291b17a.css"></head>
 
   <body>
-    <app-root>Loading(加载中)....</app-root>
-  <script src="runtime-es2015.d3ca4983366afd55d688.js" type="module"></script><script src="runtime-es5.d3ca4983366afd55d688.js" nomodule defer></script><script src="polyfills-es5.719a327b0367287a3827.js" nomodule defer></script><script src="polyfills-es2015.d1a675d38160ace32da7.js" type="module"></script><script src="scripts.5aa51f5880a396043d81.js" defer></script><script src="main-es2015.1c8ea514ed7bf319f814.js" type="module"></script><script src="main-es5.1c8ea514ed7bf319f814.js" nomodule defer></script></body>
+    <app-root>
+      <div class="text-center">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
+  <script src="runtime-es2015.d3ca4983366afd55d688.js" type="module"></script><script src="runtime-es5.d3ca4983366afd55d688.js" nomodule defer></script><script src="polyfills-es5.719a327b0367287a3827.js" nomodule defer></script><script src="polyfills-es2015.d1a675d38160ace32da7.js" type="module"></script><script src="scripts.5aa51f5880a396043d81.js" defer></script><script src="main-es2015.d1d983364ccd1cf81d64.js" type="module"></script><script src="main-es5.d1d983364ccd1cf81d64.js" nomodule defer></script></body>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140048281-1"></script>
+  <script
+    async=""
+    src="https://www.googletagmanager.com/gtag/js?id=UA-140048281-1"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
     }
-    gtag('js', new Date());
+    gtag("js", new Date());
 
-    gtag('config', 'UA-140048281-1');
+    gtag("config", "UA-140048281-1");
   </script>
-
 </html>

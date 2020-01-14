@@ -19,7 +19,7 @@ export class NewsItemComponent implements OnInit {
   url = "assets/api/item";
 
 
-  constructor(private route: ActivatedRoute, private config: ConfigService,
+  constructor(private route: ActivatedRoute, public config: ConfigService,
     translate: TranslateService) {
     translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.config.request(this.url, (data: any) => {
