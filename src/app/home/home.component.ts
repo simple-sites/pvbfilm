@@ -28,7 +28,9 @@ export class HomeComponent implements OnInit {
     });
 
     this.config.request(this.productUrl, (data: any) => {
-      this.products = data.products;
+      const itemPerRow = 3;
+      const row = Math.floor(data.products.length / itemPerRow);
+      this.products = data.products.slice(0, row * itemPerRow);
     });
   }
 }
